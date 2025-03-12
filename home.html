@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="E-TECH logo.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css1/bootstrap.min.css">
+  <link rel="stylesheet" href="css1/jquery-ui.css">
+  <link rel="stylesheet" href="css1/owl.carousel.min.css">
+  <link rel="stylesheet" href="css1/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css1/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css1/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="css1/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css1/aos.css">
+
+  <link rel="stylesheet" href="css1/style.css">
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>E-Technology</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Custom CSS to reduce space between sections -->
+    <style>
+      #about-section {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      #work-section {
+        padding-top: 20px;
+        margin-top: 0;
+      }
+      
+      /* Style pour le logo carré */
+      .header-logo .site-logo img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        background-color: transparent;
+      }
+      
+      /* Centrer le logo dans son conteneur */
+      .header-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      /* Uniformiser la largeur des sections */
+      .site-section .container {
+        max-width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      
+      /* Réduire l'espace vertical entre les sections */
+      .site-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      
+      /* Ajuster l'espacement des sponsors */
+      #sponsors-section .container {
+        max-width: 100%;
+      }
+      
+      /* Réduire marges des titres de section */
+      .row.mb-5 {
+        margin-bottom: 20px !important;
+      }
+      
+      /* Ajuster l'espacement du footer */
+      .site-footer {
+        padding-top: 40px;
+      }
+      
+      /* Réduire espace entre le contenu du footer */
+      .site-footer .row.pt-5 {
+        padding-top: 20px !important;
+      }
+      
+      .site-footer .row.mt-5 {
+        margin-top: 20px !important;
+      }
+
+      /* Changer la couleur principale de vert à bleu */
+      a, .btn-primary, .site-section-heading:after, 
+      .site-navbar .navbar-nav > li > a:hover, 
+      .media-1:hover h2, .h-entry h2 a:hover,
+      .icon-facebook:hover, .icon-instagram:hover, .icon-linkedin:hover {
+        color: #39b54a !important;
+      }
+
+      .btn-primary, .bg-primary, .badge-primary, 
+      .social a:hover, .site-navbar .navbar-nav > .active > a {
+        background-color: #39b54a !important;
+        border-color: #39b54a !important;
+      }
+
+      /* Uniformiser les logos des sponsors */
+      #sponsors-section img {
+        max-height: 80px;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+      }
+
+      #sponsors-section .col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+      }
+
+      /* Footer en 4 colonnes égales */
+      .site-footer .col-footer {
+        flex: 0 0 25%;
+        max-width: 25%;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      /* Corriger l'effet de survol sur les images de projets */
+      .media-1 {
+        height: auto;
+        display: block;
+        position: relative;
+        margin-bottom: 30px;
+      }
+      
+      .media-1 img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      
+      /* Correction de la position du texte dans les projets */
+      .media-1-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Maintient le centrage vertical */
+        align-items: center;
+        z-index: 2;
+        text-align: center;
+        padding: 20px;
+      }
+      
+      /* Styles pour améliorer la visibilité du texte */
+      .media-1-content h2 {
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 1.8rem;
+      }
+      
+      .media-1-content .category {
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        font-weight: 500;
+      }
+      
+      /* S'assurer que le texte est toujours visible même sans hover */
+      .media-1:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        background: rgba(0, 0, 0, 0.3); /* Léger assombrissement permanent */
+        opacity: 1;
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+      
+      .media-1:hover:before {
+        background: rgba(0, 0, 0, 0.6); /* Plus sombre au survol */
+      }
+      
+      /* Rendre le texte visible même sans survol */
+      .media-1-content h2,
+      .media-1-content .category {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.3s ease;
+      }
+      
+      .media-1:hover .media-1-content h2 {
+        transform: translateY(-5px); /* Léger mouvement vers le haut au survol */
+      }
+      
+      /* Désactiver certaines animations pour améliorer la performance */
+      @media (max-width: 768px) {
+        [data-aos] {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+      
+      /* Réduire le nombre d'animations simultanées */
+      .jarallax {
+        will-change: transform;
+      }
+      
+      /* Optimiser le rendu des images */
+      img {
+        will-change: transform;
+      }
+      
+      /* Améliorations esthétiques */
+      
+      /* 1. Effet de parallaxe subtil pour l'arrière-plan d'intro */
+      .intro-slider-img {
+        transform: translateZ(0);
+        transition: transform 0.8s ease-out;
+      }
+      
+      /* 2. Styles modernes pour les boutons */
+      .btn, .btn-primary, button[type="submit"] {
+        border-radius: 50px;
+        padding: 12px 28px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
+      .btn:after, .btn-primary:after, button[type="submit"]:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        z-index: -1;
+      }
+      
+      .btn:hover:after, .btn-primary:hover:after, button[type="submit"]:hover:after {
+        height: 100%;
+      }
+      
+      /* 3. Animation de scroll plus douce */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* 4. Style moderne pour les sections avec effet d'ombre */
+      .site-section {
+        box-shadow: 0 15px 35px rgba(50,50,93,0.03), 0 5px 15px rgba(0,0,0,0.05);
+        border-radius: 15px;
+        margin: 0 30px 40px;
+        overflow: hidden;
+        background-color: #fff;
+      }
+      
+      /* 5. Style moderne pour la navigation */
+      .s-header {
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      }
+      
+      /* 6. Animation pour les cartes de projet */
+      .media-1 {
+        transform: translateY(0);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      }
+      
+      .media-1:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      }
+      
+      /* 7. Style plus élégant pour le footer */
+      .site-footer {
+        background-image: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        margin-top: 30px;
+        padding-top: 60px;
+      }
+      
+      /* 8. Animation pour les icônes sociales */
+      .site-footer a span, .intro-social a i {
+        transition: transform 0.3s ease;
+        display: inline-block;
+      }
+      
+      .site-footer a:hover span, .intro-social a:hover i {
+        transform: rotate(360deg) scale(1.2);
+      }
+      
+      /* 9. Amélioration de la typographie */
+      h1, h2, h3, h4, h5, h6, .site-section-heading {
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      
+      .site-section-heading:after {
+        height: 5px;
+        width: 60px;
+        border-radius: 5px;
+        background: #39b54a;
+        margin: 15px auto;
+      }
+      
+      /* 10. Animation fluide d'apparition pour le texte */
+      [data-aos="text-reveal"] {
+        overflow: hidden;
+      }
+      
+      [data-aos="text-reveal"] > * {
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 1s ease, opacity 1s ease;
+      }
+      
+      [data-aos="text-reveal"].aos-animate > * {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      
+      /* 11. Loader personnalisé plus élégant */
+      #preloader {
+        background: #fff;
+      }
+      
+      #loader {
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(57, 181, 74, 0.2);
+        border-top-color: #39b54a;
+        border-radius: 50%;
+        animation: loader-spin 1s linear infinite;
+      }
+      
+      @keyframes loader-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* 12. Style pour les images de compétition */
+      .h-entry {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        background: white;
+      }
+      
+      .h-entry:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      }
+      
+      .h-entry img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+      }
+      
+      .h-entry h2, .h-entry p {
+        padding: 0 15px;
+      }
+      
+      .h-entry h2 {
+        margin-top: 15px;
+      }
+      
+      /* 13. Style pour les sponsors avec rotation subtile */
+      #sponsors-section img {
+        transition: transform 0.5s ease, filter 0.5s ease;
+        filter: grayscale(100%);
+      }
+      
+      #sponsors-section img:hover {
+        transform: scale(1.1) rotate(2deg);
+        filter: grayscale(0%);
+      }
+      
+      /* 14. Animation du logo */
+      .header-logo .site-logo img {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      /* Rendre la bande supérieure transparente */
+      .s-header__nav-wrap {
+        background-color: transparent !important;
+      }
+      
+      .s-header {
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+      }
+      
+      .header-email {
+        background-color: transparent !important;
+      }
+      
+      /* Assurer que le texte du header reste visible */
+      .header-email a, 
+      .header-email a:hover, 
+      .header-email a:focus, 
+      .header-email a:active {
+        color: #fff !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      
+      /* Ajuster la navigation pour s'adapter au fond transparent */
+      .s-header__nav {
+        background-color: transparent !important;
+      }
+      
+      .s-header__nav ul li a {
+        color: #fff !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      
+      .s-header__nav ul li a:hover {
+        color: #39b54a !important;
+      }
+      
+      /* Ajouter un fond progressif au scroll */
+      .s-header.sticky {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s ease;
+      }
+      
+      .s-header.sticky .header-email a,
+      .s-header.sticky .s-header__nav ul li a {
+        color: #333 !important;
+        text-shadow: none;
+      }
+      
+      .s-header.sticky .s-header__nav ul li a:hover {
+        color: #39b54a !important;
+      }
+
+      /* Positionnement des icônes sociales en haut à droite */
+      .intro-social {
+        position: absolute;
+        top: 730px;
+        right: 30px;
+        z-index: 100;
+      }
+      
+      .intro-social ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .intro-social ul li {
+        margin-left: 15px;
+      }
+      
+      /* Afficher uniquement les 3 icônes souhaitées */
+      .intro-social ul li.facebook,
+      .intro-social ul li.instagram,
+      .intro-social ul li.linkedin {
+        display: block;
+      }
+      
+      /* S'assurer que les icônes sont bien visibles */
+      .intro-social ul li a {
+        color: #39b54a !important;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        display: block;
+      }
+      
+      .intro-social ul li a:hover {
+        transform: scale(1.2);
+      }
+    </style>
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script defer src="js/fontawesome/all.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon"  href="E-TECH logo.png">
+    <link rel="icon" type="image/png"  href="E-TECH logo.png">
+    <link rel="icon" type="image/png"  href="E-TECH logo.png">
+    <link rel="manifest" href="site.webmanifest">
+
+</head>
+
+<body id="top">
+
+<!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- site header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="home.html">
+                <img src="E-TECH logo.png" alt="Homepage">
+            </a>
+        </div>
+
+        <div class="header-email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 12l11 3.1 7-8.1-8.156 5.672-4.312-1.202 15.362-7.68-3.974 14.57-3.75-3.339-2.17 2.925v-.769l-2-.56v7.383l4.473-6.031 4.527 4.031 6-22z"/></svg>
+            <a href="mailto:#0">bureau-e-tech@emines.um6p.ma</a>
+        </div>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- intro
+    ================================================== -->
+    <section id="intro" class="s-intro s-intro--slides">
+
+        <div class="intro-slider">
+            <div class="intro-slider-img bg-opacity-40" style="background-image: url(images/slides/nrcweb.jpg);"></div>
+            <div class="intro-slider-img" style="background-image: url(images/slides/slide-02.jpg);"></div>
+            <div class="intro-slider-img" style="background-image: url(images/slides/slide-03.jpg);"></div>
+        </div>
+
+        <div class="grid-overlay">
+            <div></div>
+        </div> 
+
+        <div class="row intro-content">
+
+            <div class="column">
+
+                <div class="intro-content__text">
+
+                    <h3>
+                    Emines Technology Club
+                    </h3>
+                    
+                    <h1>
+                        Tech it or leave it !
+                    </h1>
+
+                </div> <!-- end intro-content__text -->
+
+                <div class="intro-content__bottom">
+
+                    <div class="intro-content__counter-wrap">
+                        <h4>NRC in</h4>
+            
+                        <div class="counter">
+                            <div class="counter__time days">
+                                1
+                                <span>D</span>
+                            </div>
+                            <div class="counter__time hours">
+                                09
+                                <span>H</span>
+                            </div>
+                            <div class="counter__time minutes">
+                                54
+                                <span>M</span>
+                            </div>
+                            <div class="counter__time seconds">
+                                57
+                                <span>S</span>
+                            </div>
+                        </div>  <!-- end counter -->
+                    </div> <!-- end intro-content__counter-wrap -->
+
+                    <div class="intro-content__notify">
+                        <button type="button" class="btn--stroke btn--small modal-trigger" onclick="location.replace('nrc.html');"                        >
+                            More Info
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12l-9-9v7h-15v4h15v7z"/></svg>
+                        </button>
+                    </div> <!-- end intro-content__notify -->
+    
+                </div> <!-- end intro-content__bottom -->
+
+            </div> <!-- end column -->
+
+        </div> <!--  end intro-content -->
+
+        <div class="modal">
+            <div class="modal__inner">
+
+                <span class="modal__close"></span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+
+                <h3>Sign Up</h3>
+                <p>
+                Be the first to know about the latest updates and
+                get exclusive offer on our grand opening.
+                </p>
+
+                <form id="mc-form" class="group mc-form" novalidate="true">
+                    <input type="email" value="" name="EMAIL" class="email h-full-width h-text-center h-add-half-bottom" id="mc-email" placeholder="Email Address" required="">
+                    <input type="submit" name="subscribe" value="Subscribe" class="btn--small h-full-width">
+                    <label for="mc-email" class="subscribe-message"></label>
+                </form>
+
+            </div> <!-- end modal inner -->
+        </div> <!-- end modal -->
+
+        <ul class="intro-social">
+          <li class="instagram"><a href="https://www.instagram.com/eminestechnology/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+          <li class="linkedin"><a href="https://www.linkedin.com/company/emines-technology-club/"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+      </ul> <!-- end intro social -->
+
+        <div class="intro-scroll">
+            <a href="#info" class="scroll-link smoothscroll">
+                Scroll For More
+            </a>
+        </div> <!-- end intro scroll -->
+
+
+
+    </section> <!-- end s-intro -->
+
+
+    <div class="site-section" id="about-section">
+        <div class="container">
+          <div class="row mb-5 align-items-center">
+            <div class="col-md-6 order-md-1" data-aos="fade-up" data-aos-delay="100">
+              <div class="row">
+                <div class="col-12">
+                  <div class="text-left pb-1">
+                    <h2 class="site-section-heading">Qui Sommes Nous ?</h2>
+                  </div>
+                </div>
+                <div class="col-12 mb-4">
+                  <p class="lead">Le club E-Technology est un des premiers clubs créés à l'EMINES, par des étudiants et pour les étudiants. Son but a toujours été, et est toujours d'encourager les étudiants à donner libre cours à leur imagination, en liant l'ingénierie en classe avec la robotique en pratique.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-5 ml-auto mb-5 order-md-2" data-aos="fade-up" data-aos-delay="200">
+              <img src="images/img_13.jpg" alt="Image" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+        <section class="site-section" id="work-section">
+          <div class="container">
+            <div class="row mb-5 justify-content-center">
+              <div class="col-md-8 text-center" data-aos="fade-up">
+                <h2 class="site-section-heading text-center">Projets</h2>
+                <p class="lead">Le seul endroit où l'imagination et l'ingénierie fusionnent est dans les projets de notre club.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <a href="images/img_1.jpg" class="media-1" data-fancybox="gallery">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                  <div class="media-1-content">
+                    <h2>Plateforme de tonte</h2>
+                    <span class="category">Robotique</span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="images/img_2.jpg" class="media-1" data-fancybox="gallery">
+                  <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                  <div class="media-1-content">
+                    <h2>SkateBoard Electrique</h2>
+                    <span class="category">Mobilité</span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="images/img_3.jpg" class="media-1" data-fancybox="gallery">
+                  <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                  <div class="media-1-content">
+                    <h2>Robot Delta</h2>
+                    <span class="category">Robotique</span>
+                  </div>
+                </a>
+              </div>
+  
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <a href="images/img_4.jpg" class="media-1" data-fancybox="gallery">
+                  <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+                  <div class="media-1-content">
+                    <h2>Autobalancing Robot</h2>
+                    <span class="category">Robotique</span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="images/img_5.jpg" class="media-1" data-fancybox="gallery">
+                  <img src="images/img_5.jpg" alt="Image" class="img-fluid">
+                  <div class="media-1-content">
+                    <h2>Suiveur de ligne</h2>
+                    <span class="category">Robotique</span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="images/img_6.jpg" class="media-1" data-fancybox="gallery">
+                  <img src="images/img_6.jpg" alt="Image" class="img-fluid">
+                  <div class="media-1-content">
+                    <h2>Maze Solver</h2>
+                    <span class="category">Robotique</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+  
+        <section class="site-section" id="sponsors-section">
+          <div class="container">
+            <h2 class="site-section-heading text-center">Our Sponsors</h2>  
+            <div class="row">
+              <div class="col" data-aos="fade-in" data-aos-delay="0">
+                <img src="images/clients-05.png" alt="Image" class="img-fluid">
+              </div>
+              <div class="col" data-aos="fade-in" data-aos-delay="100">
+                <img src="images/clients-02.png" alt="Image" class="img-fluid">
+              </div>
+              <div class="col" data-aos="fade-in" data-aos-delay="200">
+                <img src="images/clients-03.svg" alt="Image" class="img-fluid">
+              </div>
+              <div class="col" data-aos="fade-in" data-aos-delay="300">
+                <img src="images/clients-01.png" alt="Image" class="img-fluid">
+              </div>
+              <div class="col" data-aos="fade-in" data-aos-delay="400">
+                <img src="images/clients-04.png" alt="Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </section>      
+  
+        <section class="site-section" id="blog-section">
+            <div class="container">
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center" data-aos="fade-up">
+                  <h2 class="site-section-heading text-center">Compétitions</h2>
+                  <p class="lead">Découvrez nos compétitions de robotique!</p>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="0">
+                  <div class="h-entry">
+                    <img src="images/E-Tech-URC-31.jpg" alt="Image" class="img-fluid">
+                    <h2 class="font-size-regular"><a href="#">UM6P Robotics Competition</a></h2>
+                    <p>Mettez en valeur vos talents lors de notre compétition universitaire – où chaque département a une chance de briller!</p>
+                  </div> 
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="h-entry">
+                    <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                    <h2 class="font-size-regular"><a href="#">National Robotics Competition</a></h2>
+                    <p>Découvrez la pointe de la technologie robotique lors de notre competition nationale de robotique!</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="h-entry">
+                    <img src="images/img_10.JPG" alt="Image" class="img-fluid">
+                    <h2 class="font-size-regular"><a href="#">Local Domotics Competition</a></h2>
+                    <p>Rejoignez la compétition local de domotique - où la créativité rencontre la technologie !</p>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+    
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+
+    <!-- Template scripts -->
+    <script src="js1/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js1/jquery-ui.js"></script>
+    <script src="js1/popper.min.js"></script>
+    <script src="js1/bootstrap.min.js"></script>
+    <script src="js1/owl.carousel.min.js"></script>
+    <script src="js1/jquery.stellar.min.js"></script>
+    <script src="js1/jquery.countdown.min.js"></script>
+    <script src="js1/bootstrap-datepicker.min.js"></script>
+    <script src="js1/jquery.easing.1.3.js"></script>
+    <script src="js1/aos.js"></script>
+    <script src="js1/jquery.fancybox.min.js"></script>
+    <script src="js1/jarallax.min.js"></script>
+    <script src="js1/jarallax-element.min.js"></script>
+    <script src="js1/lozad.min.js"></script>
+    <script src="js1/modernizr.min.js"></script>
+    <script src="js1/three.min.js"></script>
+    <script src="js1/TweenMax.min.js"></script>
+    <script src="js1/OBJLoader.js"></script>
+    <script src="js1/ParticleHead.js"></script>
+    <script src="js1/jquery.sticky.js"></script>
+    <script src="js1/typed.js"></script>
+
+    <!-- Initialize AOS properly -->
+    <script>
+      $(document).ready(function() {
+        // Initialize AOS with proper settings
+        AOS.init({
+          duration: 800,
+          easing: 'slide',
+          once: true,
+          offset: 100,
+          disable: 'mobile'
+        });
+        
+        // Initialize jarallax after AOS
+        $('.jarallax').jarallax({
+          speed: 0.2
+        });
+        
+        // Ensure jarallax elements are properly initialized
+        jarallax(document.querySelectorAll('[data-jarallax-element]'));
+        
+        // Typed.js initialization
+        var typed = new Typed('.typed-words', {
+          strings: ["Web Apps"," WordPress"," Mobile Apps"],
+          typeSpeed: 80,
+          backSpeed: 80,
+          backDelay: 4000,
+          startDelay: 1000,
+          loop: true,
+          showCursor: true
+        });
+      });
+    </script>
+
+    <!-- Main initialization script - must be last -->
+    <script src="js/main.js"></script>
+
+    <!-- Script d'optimisation -->
+    <script>
+      // Optimisation du chargement des ressources
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialiser AOS avec des paramètres optimisés
+        AOS.init({
+          duration: 600,
+          once: true,
+          disable: 'mobile'
+        });
+        
+        // Désactiver jarallax sur mobile
+        if (window.innerWidth < 768) {
+          if (typeof jarallax !== 'undefined') {
+            jarallax(document.querySelectorAll('.jarallax'), 'destroy');
+          }
+        }
+        
+        // Effet parallaxe sur le défilement
+        window.addEventListener('scroll', function() {
+          const scrolled = window.pageYOffset;
+          const introSlides = document.querySelectorAll('.intro-slider-img');
+          
+          if (introSlides.length > 0) {
+            introSlides.forEach(slide => {
+              slide.style.transform = `translateY(${scrolled * 0.2}px)`;
+            });
+          }
+        });
+        
+        // Animation des nombres pour les statistiques
+        const animateNumbers = () => {
+          const numbers = document.querySelectorAll('.animate-number');
+          
+          numbers.forEach(number => {
+            const target = parseInt(number.getAttribute('data-target'));
+            const speed = parseInt(number.getAttribute('data-speed')) || 200;
+            const increment = target / speed;
+            let current = 0;
+            
+            const updateNumber = () => {
+              if (current < target) {
+                current += increment;
+                number.textContent = Math.ceil(current);
+                setTimeout(updateNumber, 1);
+              } else {
+                number.textContent = target;
+              }
+            };
+            
+            updateNumber();
+          });
+        };
+        
+        // Fonction pour vérifier si un élément est visible dans le viewport
+        const isInViewport = (element) => {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+        };
+        
+        // Observer pour déclencher les animations au scroll
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains('numbers-section')) {
+                animateNumbers();
+              }
+              
+              // Ajouter d'autres logiques d'animation ici
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        // Observer les sections
+        document.querySelectorAll('.site-section').forEach(section => {
+          observer.observe(section);
+        });
+        
+        // Amélioration de l'expérience de navigation
+        const scrollLinks = document.querySelectorAll('a[href^="#"]');
+        
+        scrollLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Script pour gérer l'effet de scroll du header -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Fonction pour gérer l'effet de fond au scroll
+        const header = document.querySelector('.s-header');
+        
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            header.classList.add('sticky');
+          } else {
+            header.classList.remove('sticky');
+          }
+        });
+      });
+    </script>
+
+
+<footer class="site-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-footer">
+        <h2 class="footer-heading mb-4">Rejoignez-nous</h2>
+        <p>Rejoignez-nous et commencez votre voyage dans le monde passionnant de la robotique !</p>
+      </div>
+      <div class="col-footer">
+        <h2 class="footer-heading mb-4">Contact</h2>
+        <ul class="list-unstyled">
+          <li>Email : <a href="mailto:bureau-e-tech@emines.um6p.ma">bureau-e-tech@emines.um6p.ma</a></li>
+          <li>Téléphone : <a href="tel:+212688208294">+212 766-055647</a></li>
+        </ul>
+      </div>
+      <div class="col-footer">
+        <h2 class="footer-heading mb-4">Suivez-nous</h2>
+        <a href="https://www.instagram.com/eminestechnology/" class="pl-0 pr-3">
+          <span class="icon-instagram"></span>
+        </a>
+        <a href="https://www.linkedin.com/company/emines-technology-club/" class="pl-3 pr-3">
+          <span class="icon-linkedin"></span>
+        </a>
+      </div>
+      <div class="col-footer">
+        <h2 class="footer-heading mb-4">Adresse</h2>
+        <p>LOT 660 43150 BEN GUERIR. EMINES Université Mohammed VI Polytechnique</p>
+      </div>
+    </div>
+    <div class="row pt-5 mt-5 text-center">
+      <div class="col-md-12">
+        <div class="border-top pt-5">
+          <p>Copyright © 2024 eminestechnology.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
