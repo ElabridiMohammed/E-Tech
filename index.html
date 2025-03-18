@@ -109,18 +109,72 @@
         margin-top: 20px !important;
       }
 
-      /* Changer la couleur principale de vert à bleu */
+      /* Additional color styles for the title and dark backgrounds */
+      .intro-content__text h3 {
+        color: #4d7cc3; /* Lighter blue for the title to stand out on dark background */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Change all green elements to blue */
       a, .btn-primary, .site-section-heading:after, 
       .site-navbar .navbar-nav > li > a:hover, 
       .media-1:hover h2, .h-entry h2 a:hover,
       .icon-facebook:hover, .icon-instagram:hover, .icon-linkedin:hover {
-        color: #39b54a !important;
+        color: #1a3c6e !important;
       }
 
       .btn-primary, .bg-primary, .badge-primary, 
       .social a:hover, .site-navbar .navbar-nav > .active > a {
-        background-color: #39b54a !important;
-        border-color: #39b54a !important;
+        background-color: #1a3c6e !important;
+        border-color: #1a3c6e !important;
+      }
+      
+      /* Blue accents for icons and buttons */
+      .intro-social ul li a {
+        color: #4d7cc3 !important; /* Lighter blue for better visibility on dark background */
+      }
+      
+      /* Blue border accents */
+      .site-section-heading:after {
+        background: #1a3c6e;
+      }
+      
+      /* Blue hover effects */
+      .s-header__nav ul li a:hover,
+      .s-header.sticky .s-header__nav ul li a:hover {
+        color: #1a3c6e !important;
+      }
+      
+      /* Change counter colors */
+      .counter__time {
+        color: #4d7cc3;
+        border-color: #1a3c6e;
+      }
+      
+      /* Blue button accents */
+      .btn--stroke {
+        border-color: #1a3c6e;
+        color: #4d7cc3;
+      }
+      
+      .btn--stroke:hover {
+        background-color: #1a3c6e;
+      }
+      
+      /* Change links in footer */
+      .site-footer a {
+        color: #3a5f9b !important;
+      }
+      
+      /* More button styling */
+      .btn:after, .btn-primary:after, button[type="submit"]:after {
+        background-color: rgba(26, 60, 110, 0.1);
+      }
+      
+      /* Blue animation for loader */
+      #loader {
+        border: 4px solid rgba(26, 60, 110, 0.2);
+        border-top-color: #1a3c6e;
       }
 
       /* Uniformiser les logos des sponsors */
@@ -449,13 +503,28 @@
         background-color: transparent !important;
       }
       
-      /* Assurer que le texte du header reste visible */
-      .header-email a, 
-      .header-email a:hover, 
-      .header-email a:focus, 
-      .header-email a:active {
-        color: #fff !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      /* Email styling in header */
+      .header-email a {
+        color: #4d7cc3 !important; /* Lighter blue for better visibility */
+        transition: color 0.3s ease;
+      }
+      
+      .header-email a:hover {
+        color: #6d9be3 !important; /* Even lighter blue on hover */
+      }
+      
+      /* SVG icon color in header */
+      .header-email svg {
+        fill: #4d7cc3;
+      }
+      
+      /* Make sure email remains visible when header becomes sticky */
+      .s-header.sticky .header-email a {
+        color: #1a3c6e !important;
+      }
+      
+      .s-header.sticky .header-email svg {
+        fill: #1a3c6e;
       }
       
       /* Ajuster la navigation pour s'adapter au fond transparent */
@@ -536,9 +605,8 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon"  href="E-TECH logo.png">
-    <link rel="icon" type="image/png"  href="E-TECH logo.png">
-    <link rel="icon" type="image/png"  href="E-TECH logo.png">
+    <link rel="apple-touch-icon" href="logofavicon.png">
+    <link rel="icon" type="image/png" href="logofavicon.png">
     <link rel="manifest" href="site.webmanifest">
 
 </head>
@@ -593,11 +661,11 @@
 
                 <div class="intro-content__text">
 
-                    <h3>
+                    <h3 style="font-size: 3.5rem; margin-bottom: 0.8rem; font-weight: 700; line-height: 1.2; max-width: 90%; margin-left: auto; margin-right: auto;">
                     Emines Technology Club
                     </h3>
                     
-                    <h1>
+                    <h1 style="font-size: 1.8rem; font-weight: 500;">
                         Tech it or leave it !
                     </h1>
 
@@ -716,57 +784,57 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                <a href="images/img_1.jpg" class="media-1" data-fancybox="gallery">
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <a href="images/Bras manipulateur.JPG" class="media-1" data-fancybox="gallery">
+                  <img src="images/Bras manipulateur.JPG" alt="Bras manipulateur" class="img-fluid">
                   <div class="media-1-content">
-                    <h2>Plateforme de tonte</h2>
+                    <h2>Bras manipulateur</h2>
                     <span class="category">Robotique</span>
                   </div>
                 </a>
               </div>
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="images/img_2.jpg" class="media-1" data-fancybox="gallery">
-                  <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                <a href="images/Drone.JPG" class="media-1" data-fancybox="gallery">
+                  <img src="images/Drone.JPG" alt="Drone" class="img-fluid">
                   <div class="media-1-content">
-                    <h2>SkateBoard Electrique</h2>
-                    <span class="category">Mobilité</span>
+                    <h2>Drone</h2>
+                    <span class="category">Aéronautique</span>
                   </div>
                 </a>
               </div>
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="images/img_3.jpg" class="media-1" data-fancybox="gallery">
-                  <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                <a href="images/Imprimante3D.JPG" class="media-1" data-fancybox="gallery">
+                  <img src="images/Imprimante3D.JPG" alt="Imprimante 3D" class="img-fluid">
                   <div class="media-1-content">
-                    <h2>Robot Delta</h2>
-                    <span class="category">Robotique</span>
+                    <h2>Imprimante 3D</h2>
+                    <span class="category">Fabrication</span>
                   </div>
                 </a>
               </div>
   
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                <a href="images/img_4.jpg" class="media-1" data-fancybox="gallery">
-                  <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+                <a href="images/Robot spider.JPG" class="media-1" data-fancybox="gallery">
+                  <img src="images/Robot spider.JPG" alt="Robot Spider" class="img-fluid">
                   <div class="media-1-content">
-                    <h2>Autobalancing Robot</h2>
+                    <h2>Robot Spider</h2>
                     <span class="category">Robotique</span>
                   </div>
                 </a>
               </div>
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="images/img_5.jpg" class="media-1" data-fancybox="gallery">
-                  <img src="images/img_5.jpg" alt="Image" class="img-fluid">
+                <a href="images/Skateborad électrique.JPG" class="media-1" data-fancybox="gallery">
+                  <img src="images/Skateborad électrique.JPG" alt="Skateboard électrique" class="img-fluid">
                   <div class="media-1-content">
-                    <h2>Suiveur de ligne</h2>
-                    <span class="category">Robotique</span>
+                    <h2>Skateboard électrique</h2>
+                    <span class="category">Mobilité</span>
                   </div>
                 </a>
               </div>
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="images/img_6.jpg" class="media-1" data-fancybox="gallery">
-                  <img src="images/img_6.jpg" alt="Image" class="img-fluid">
+                <a href="images/V-Plotter.JPG" class="media-1" data-fancybox="gallery">
+                  <img src="images/V-Plotter.JPG" alt="V-Plotter" class="img-fluid">
                   <div class="media-1-content">
-                    <h2>Maze Solver</h2>
-                    <span class="category">Robotique</span>
+                    <h2>V-Plotter</h2>
+                    <span class="category">Dessin</span>
                   </div>
                 </a>
               </div>
