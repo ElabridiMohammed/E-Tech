@@ -103,7 +103,7 @@
     * ------------------------------------------------------ */
     const ssFinalCountdown = function() {
 
-        const finalDate = '2022/04/07';
+        const finalDate = '2026/04/17';
 
         $('.counter').countdown(finalDate)
         .on('update.countdown finish.countdown', function(event) {
@@ -112,7 +112,7 @@
                         '<div class=\"counter__time hours\">%H&nbsp;<span>H</span></div>' +
                         '<div class=\"counter__time minutes\">%M&nbsp;<span>M</span></div>' +
                         '<div class=\"counter__time seconds\">%S&nbsp;<span>S</span></div>';
-                    
+
             $(this).html(event.strftime(str));
 
         });
@@ -229,7 +229,7 @@
     * ------------------------------------------------------ */
     var clCountDown = function() {
 
-        var countDate = new Date("2025-04-11T23:59:59").getTime(); // Set your target date here
+        var countDate = new Date("2026-04-17T00:00:00").getTime(); // NRC 2026 - April 17
         
         var countdown = function() {
             var now = new Date().getTime();

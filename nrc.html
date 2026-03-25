@@ -1,465 +1,2789 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <title>Compétition Nationale de Robotique 2025</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- Add the same favicon tags as in index.html -->
-    <link rel="apple-touch-icon" href="logofavicon.png">
-    <link rel="icon" type="image/png" href="logofavicon.png">
-    <link rel="manifest" href="site.webmanifest">
-    
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <link rel="stylesheet" href="css3/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css3/animate.css">
-    
-    <link rel="stylesheet" href="css3/owl.carousel.min.css">
-    <link rel="stylesheet" href="css3/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css3/magnific-popup.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NRC 2026 - National Robotics Competition | Mobilite Industrielle</title>
+  <meta name="description"
+    content="8eme edition de la Competition Nationale de Robotique - Mobilite Industrielle. Robot bipede, hackathon national. 17-19 Avril 2026, EMINES UM6P.">
 
-    <link rel="stylesheet" href="css3/aos.css">
+  <link rel="apple-touch-icon" href="logofavicon.png">
+  <link rel="icon" type="image/png" href="logofavicon.png">
 
-    <link rel="stylesheet" href="css3/ionicons.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
 
-    <link rel="stylesheet" href="css3/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css3/jquery.timepicker.css">
+  <style>
+    /* ==============================
+       INDUSTRIAL ROBOTICS THEME
+       ============================== */
+    :root {
+      --bg: #080a0d;
+      --bg-card: #0f1318;
+      --bg-muted: #161b22;
+      --fg: #c9d1d9;
+      --fg-muted: #8b949e;
+      --accent: #00ff88;
+      --accent2: #ff6b35;
+      --accent3: #00d4ff;
+      --border: #21262d;
+      --metal: #3d4450;
+      --rust: #8b4513;
+      --warning: #f0b429;
 
-    
-    <link rel="stylesheet" href="css3/flaticon.css">
-    <link rel="stylesheet" href="css3/icomoon.css">
-    <link rel="stylesheet" href="css3/style.css">
+      --glow: 0 0 5px #00ff88, 0 0 15px #00ff8850;
+      --glow-lg: 0 0 10px #00ff88, 0 0 25px #00ff8870, 0 0 50px #00ff8840;
+      --glow-orange: 0 0 5px #ff6b35, 0 0 20px #ff6b3560;
+      --glow-cyan: 0 0 5px #00d4ff, 0 0 20px #00d4ff60;
 
-    <!-- Add subtle animation enhancements -->
-    <style>
-      /* Enhanced hover effect for buttons */
-      .btn {
-        transition: all 0.3s ease;
+      --font-heading: 'Orbitron', 'Share Tech Mono', monospace;
+      --font-body: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      --font-label: 'Share Tech Mono', monospace;
+
+      --chamfer: polygon(0 12px, 12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px));
+      --chamfer-sm: polygon(0 6px, 6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px));
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ==============================
+       SCANLINE + NOISE OVERLAY
+       ============================== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.08) 2px,
+          rgba(0, 0, 0, 0.08) 4px);
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ==============================
+       ANIMATIONS
+       ============================== */
+    @keyframes glitch {
+
+      0%,
+      92%,
+      100% {
+        transform: translate(0);
       }
-      
-      .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+
+      93% {
+        transform: translate(-4px, 2px);
       }
-      
-      /* Subtle floating animation for countdown timer */
-      #timer .time {
-        transition: all 0.3s ease;
+
+      94% {
+        transform: translate(4px, -2px);
       }
-      
-      #timer .time:hover {
-        transform: translateY(-5px);
+
+      95% {
+        transform: translate(-2px, -2px);
       }
-      
-      /* Enhanced focus for schedule tabs */
-      .nav-pills .nav-link {
-        transition: all 0.3s ease;
+
+      96% {
+        transform: translate(2px, 2px);
       }
-      
-      .nav-pills .nav-link:hover:not(.active) {
-        transform: translateY(-2px);
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
       }
-      
-      /* Subtle entrance animations for fun facts */
-      .counter-wrap .icon {
-        transition: all 0.4s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      
-      .counter-wrap:hover .icon {
-        transform: scale(1.1) rotate(5deg);
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      
-      /* Gallery hover effects */
-      .gallery {
-        overflow: hidden;
+    }
+
+    @keyframes gridMove {
+      0% {
+        transform: translate(0, 0);
       }
-      
-      .gallery:before {
-        content: '';
-        background: rgba(0, 0, 0, 0.2);
-        position: absolute;
+
+      100% {
+        transform: translate(60px, 60px);
+      }
+    }
+
+    @keyframes scanline {
+      0% {
+        top: -10%;
+      }
+
+      100% {
+        top: 110%;
+      }
+    }
+
+    @keyframes robotWalk {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      25% {
+        transform: translateY(-4px);
+      }
+
+      50% {
+        transform: translateY(0);
+      }
+
+      75% {
+        transform: translateY(-4px);
+      }
+    }
+
+    @keyframes robotLegL {
+
+      0%,
+      100% {
+        transform: rotate(18deg);
+      }
+
+      50% {
+        transform: rotate(-18deg);
+      }
+    }
+
+    @keyframes robotLegR {
+
+      0%,
+      100% {
+        transform: rotate(-18deg);
+      }
+
+      50% {
+        transform: rotate(18deg);
+      }
+    }
+
+    @keyframes robotArmL {
+
+      0%,
+      100% {
+        transform: rotate(-12deg);
+      }
+
+      50% {
+        transform: rotate(12deg);
+      }
+    }
+
+    @keyframes robotArmR {
+
+      0%,
+      100% {
+        transform: rotate(12deg);
+      }
+
+      50% {
+        transform: rotate(-12deg);
+      }
+    }
+
+    @keyframes robotGlow {
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.5));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.8));
+      }
+    }
+
+    @keyframes floatSlow {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes rotate360 {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spiderLeg {
+
+      0%,
+      100% {
+        transform: rotate(-5deg);
+      }
+
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+
+    @keyframes dataFlow {
+      0% {
+        stroke-dashoffset: 200;
+      }
+
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes gearRotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .anim-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .anim-fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==============================
+       NAVBAR
+       ============================== */
+    .nrc-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nrc-nav.scrolled {
+      background: rgba(8, 10, 13, 0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 40px;
+    }
+
+    .nrc-nav__logo img {
+      height: 50px;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.4));
+    }
+
+    .nrc-nav.scrolled .nrc-nav__logo img {
+      height: 38px;
+    }
+
+    .nrc-nav__links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nrc-nav__links a {
+      color: var(--fg-muted);
+      text-decoration: none;
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .nrc-nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      box-shadow: var(--glow);
+      transition: width 0.3s ease;
+    }
+
+    .nrc-nav__links a:hover {
+      color: var(--accent);
+    }
+
+    .nrc-nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .nrc-nav__cta {
+      padding: 10px 24px;
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      background: var(--accent);
+      color: var(--bg) !important;
+      text-decoration: none;
+      font-weight: 700;
+      clip-path: var(--chamfer-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nrc-nav__cta:hover {
+      filter: brightness(1.2);
+      box-shadow: var(--glow-lg);
+      transform: translateY(-2px);
+    }
+
+    /* ==============================
+       HERO SECTION
+       ============================== */
+    .nrc-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 20px 80px;
+    }
+
+    /* Industrial Grid */
+    .nrc-hero__grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 30s linear infinite;
+    }
+
+    /* Blueprint lines */
+    .nrc-hero__blueprint {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background:
+        linear-gradient(90deg, var(--accent3) 1px, transparent 1px) 0 0 / 120px 120px,
+        linear-gradient(var(--accent3) 1px, transparent 1px) 0 0 / 120px 120px;
+    }
+
+    .nrc-hero__glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(150px);
+      pointer-events: none;
+    }
+
+    .nrc-hero__glow--1 {
+      width: 600px;
+      height: 600px;
+      top: -200px;
+      right: -150px;
+      background: var(--accent);
+      opacity: 0.1;
+    }
+
+    .nrc-hero__glow--2 {
+      width: 500px;
+      height: 500px;
+      bottom: -200px;
+      left: -100px;
+      background: var(--accent2);
+      opacity: 0.08;
+    }
+
+    .nrc-hero__glow--3 {
+      width: 400px;
+      height: 400px;
+      top: 40%;
+      left: 50%;
+      background: var(--accent3);
+      opacity: 0.05;
+    }
+
+    .nrc-hero__scanline {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+      animation: scanline 4s linear infinite;
+      pointer-events: none;
+    }
+
+    #particles-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ==============================
+       MAIN BIPEDAL ROBOT - INTERACTIVE CANVAS
+       ============================== */
+    .nrc-robot-main {
+      position: absolute;
+      right: 2%;
+      bottom: 5%;
+      width: 280px;
+      height: 350px;
+      z-index: 5;
+    }
+
+    #hero-robot-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ==============================
+       FLOATING LEGACY ROBOTS
+       ============================== */
+    .nrc-legacy-robots {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .nrc-legacy-robot {
+      position: absolute;
+      opacity: 0.15;
+      filter: blur(0.5px);
+    }
+
+    .nrc-legacy-robot--spider {
+      left: 5%;
+      top: 20%;
+      width: 80px;
+      animation: floatSlow 8s ease-in-out infinite;
+    }
+
+    .nrc-legacy-robot--drone {
+      right: 15%;
+      top: 15%;
+      width: 70px;
+      animation: floatSlow 6s ease-in-out infinite 1s;
+    }
+
+    .nrc-legacy-robot--arm {
+      left: 10%;
+      bottom: 20%;
+      width: 60px;
+      animation: floatSlow 7s ease-in-out infinite 2s;
+    }
+
+    .nrc-legacy-robot--gear {
+      right: 8%;
+      top: 45%;
+      width: 50px;
+      animation: gearRotate 20s linear infinite;
+      opacity: 0.1;
+    }
+
+    .nrc-legacy-robot--gear2 {
+      left: 15%;
+      top: 60%;
+      width: 35px;
+      animation: gearRotate 15s linear infinite reverse;
+      opacity: 0.08;
+    }
+
+    .nrc-hero__content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .nrc-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 24px;
+      border: 1px solid rgba(0, 255, 136, 0.4);
+      background: rgba(0, 255, 136, 0.05);
+      color: var(--accent);
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      margin-bottom: 25px;
+      clip-path: var(--chamfer-sm);
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .nrc-hero__badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      box-shadow: var(--glow);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .nrc-hero__edition {
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      margin-bottom: 15px;
+      animation: fadeInUp 0.9s ease 0.1s both;
+    }
+
+    .nrc-hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 8px;
+      position: relative;
+      animation: fadeInUp 1s ease 0.2s both;
+    }
+
+    .nrc-hero__title .glitch-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nrc-hero__title .glitch-text::before,
+    .nrc-hero__title .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .nrc-hero__title .glitch-text::before {
+      color: var(--accent2);
+      clip-path: inset(0 0 70% 0);
+      animation: glitch 5s infinite linear;
+    }
+
+    .nrc-hero__title .glitch-text::after {
+      color: var(--accent3);
+      clip-path: inset(30% 0 0 0);
+      animation: glitch 4s infinite linear reverse;
+    }
+
+    .nrc-hero__title .accent-gradient {
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.5));
+    }
+
+    .nrc-hero__theme {
+      font-family: var(--font-label);
+      font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+      color: var(--fg-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 8px;
+      animation: fadeInUp 1s ease 0.3s both;
+    }
+
+    .nrc-hero__theme em {
+      color: var(--accent3);
+      font-style: normal;
+      text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+
+    .nrc-hero__info {
+      font-family: var(--font-label);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+
+    .nrc-hero__info strong {
+      color: var(--accent);
+      text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+    }
+
+    /* ==============================
+       MEGA COUNTDOWN
+       ============================== */
+    .nrc-mega-countdown {
+      margin-bottom: 45px;
+      animation: fadeInUp 1s ease 0.5s both;
+    }
+
+    .nrc-mega-countdown__label {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      color: var(--fg-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .nrc-mega-countdown__label::before {
+      content: '[ ';
+      color: var(--accent);
+    }
+
+    .nrc-mega-countdown__label::after {
+      content: ' ]';
+      color: var(--accent);
+    }
+
+    .nrc-mega-countdown__grid {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .nrc-mega-countdown__item {
+      width: 110px;
+      padding: 22px 10px 18px;
+      background: linear-gradient(180deg, rgba(15, 19, 24, 0.9) 0%, rgba(22, 27, 34, 0.9) 100%);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer);
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nrc-mega-countdown__item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.5;
+    }
+
+    .nrc-mega-countdown__item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+      transform: translateY(-5px);
+    }
+
+    .nrc-mega-countdown__num {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+      text-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+    }
+
+    .nrc-mega-countdown__unit {
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      color: var(--fg-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+    }
+
+    .nrc-mega-countdown__sep {
+      display: flex;
+      align-items: center;
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--accent);
+      opacity: 0.3;
+      animation: blink 1.5s step-end infinite;
+    }
+
+    /* ==============================
+       CTA BUTTONS
+       ============================== */
+    .nrc-hero__actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease 0.7s both;
+    }
+
+    .cyber-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      clip-path: var(--chamfer-sm);
+    }
+
+    .cyber-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .cyber-btn--primary {
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 700;
+    }
+
+    .cyber-btn--primary:hover {
+      filter: brightness(1.2);
+      box-shadow: var(--glow-lg);
+      transform: translateY(-3px);
+    }
+
+    .cyber-btn--outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--fg);
+      border: 1px solid var(--border);
+      clip-path: none;
+    }
+
+    .cyber-btn--outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    /* ==============================
+       SECTION STYLING
+       ============================== */
+    .nrc-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .nrc-section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .nrc-section-header__tag {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .nrc-section-header__tag::before {
+      content: '// ';
+      color: var(--accent2);
+    }
+
+    .nrc-section-header__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .nrc-section-header__line {
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      box-shadow: var(--glow);
+      margin: 0 auto 15px;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    }
+
+    .nrc-section-header__desc {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       INTERACTIVE 3D ROBOT SECTION
+       ============================== */
+    .nrc-robot-3d-section {
+      padding: 80px 20px 100px;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 136, 0.02) 50%, transparent 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nrc-robot-3d-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.4;
+    }
+
+    .nrc-robot-3d-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.4;
+    }
+
+    .nrc-robot-3d__container {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .nrc-robot-3d__info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .nrc-robot-3d__tag {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 6px 15px;
+      background: rgba(0, 255, 136, 0.08);
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      clip-path: var(--chamfer-sm);
+    }
+
+    .nrc-robot-3d__tag::before {
+      content: '// ';
+      color: var(--accent2);
+    }
+
+    .nrc-robot-3d__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .nrc-robot-3d__title span {
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nrc-robot-3d__desc {
+      font-size: 0.9rem;
+      color: var(--fg-muted);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .nrc-robot-3d__desc .hl {
+      color: var(--accent3);
+    }
+
+    .nrc-robot-3d__specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .nrc-robot-3d__spec {
+      padding: 15px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer-sm);
+      transition: all 0.3s ease;
+    }
+
+    .nrc-robot-3d__spec:hover {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    .nrc-robot-3d__spec-label {
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .nrc-robot-3d__spec-value {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .nrc-robot-3d__viewer {
+      position: relative;
+      aspect-ratio: 4/3;
+      min-height: 400px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer);
+      overflow: hidden;
+    }
+
+    .nrc-robot-3d__viewer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3), var(--accent2));
+      z-index: 5;
+    }
+
+    .nrc-robot-3d__spline {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #robot-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.03) 0%, transparent 70%);
+    }
+
+    .nrc-robot-3d__image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 30px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .nrc-robot-3d__image:hover {
+      opacity: 1;
+    }
+
+    .nrc-robot-3d__placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg-muted);
+      font-family: var(--font-label);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+    }
+
+    .nrc-robot-3d__placeholder svg {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+      opacity: 0.4;
+    }
+
+    .nrc-robot-3d__overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .nrc-robot-3d__corner {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 2px solid var(--accent);
+      opacity: 0.6;
+    }
+
+    .nrc-robot-3d__corner--tl {
+      top: 15px;
+      left: 15px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .nrc-robot-3d__corner--tr {
+      top: 15px;
+      right: 15px;
+      border-left: none;
+      border-bottom: none;
+    }
+
+    .nrc-robot-3d__corner--bl {
+      bottom: 15px;
+      left: 15px;
+      border-right: none;
+      border-top: none;
+    }
+
+    .nrc-robot-3d__corner--br {
+      bottom: 15px;
+      right: 15px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .nrc-robot-3d__label {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      color: var(--fg-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 8px 20px;
+      background: rgba(8, 10, 13, 0.8);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer-sm);
+      z-index: 4;
+      pointer-events: auto;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nrc-robot-3d__label::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .nrc-robot-3d__label:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .nrc-robot-3d__scanline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent3), transparent);
+      opacity: 0.3;
+      animation: scanVertical 4s linear infinite;
+    }
+
+    @keyframes scanVertical {
+      0% {
         top: 0;
-        left: 0;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    .nrc-robot-3d__loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    /* ==============================
+       ABOUT
+       ============================== */
+    .nrc-about {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      align-items: center;
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nrc-about__text h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .nrc-about__text h2 span {
+      color: var(--accent);
+    }
+
+    .nrc-about__text p {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .nrc-about__text .highlight {
+      color: var(--accent3);
+    }
+
+    .nrc-about__text .terminal-cmd {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      color: var(--accent);
+      opacity: 0.5;
+      margin-top: 10px;
+    }
+
+    .nrc-about__text .terminal-cmd::before {
+      content: '$ ';
+      color: var(--accent2);
+    }
+
+    .nrc-about__objectives {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .nrc-about__obj {
+      padding: 15px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer-sm);
+      transition: all 0.3s ease;
+    }
+
+    .nrc-about__obj:hover {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    .nrc-about__obj-icon {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .nrc-about__obj p {
+      font-size: 0.75rem;
+      color: var(--fg-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ==============================
+       STATS
+       ============================== */
+    .nrc-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .nrc-stat {
+      text-align: center;
+      padding: 35px 15px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nrc-stat::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      transition: width 0.4s ease;
+    }
+
+    .nrc-stat:hover {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+      transform: translateY(-6px);
+    }
+
+    .nrc-stat:hover::after {
+      width: 50%;
+    }
+
+    .nrc-stat__icon {
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      color: var(--accent3);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .nrc-stat__num {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .nrc-stat__label {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      color: var(--fg-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* ==============================
+       SCHEDULE
+       ============================== */
+    .nrc-schedule-section {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, rgba(0, 255, 136, 0.01) 0%, transparent 100%);
+      position: relative;
+    }
+
+    .nrc-schedule-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 255, 136, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 136, 0.015) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    .nrc-schedule {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .nrc-schedule__tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .nrc-schedule__tab {
+      padding: 14px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer-sm);
+      color: var(--fg-muted);
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .nrc-schedule__tab:hover {
+      border-color: rgba(0, 255, 136, 0.3);
+      color: var(--fg);
+    }
+
+    .nrc-schedule__tab.active {
+      background: rgba(0, 255, 136, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    .nrc-schedule__tab span {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 400;
+      opacity: 0.6;
+      margin-top: 4px;
+    }
+
+    .nrc-schedule__day {
+      display: none;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      clip-path: var(--chamfer);
+    }
+
+    .nrc-schedule__day.active {
+      display: block;
+      animation: fadeInUp 0.4s ease;
+    }
+
+    .nrc-schedule__day-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--bg-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nrc-schedule__day-header .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .nrc-schedule__day-header .dot--r {
+      background: #ff6b6b;
+    }
+
+    .nrc-schedule__day-header .dot--y {
+      background: var(--warning);
+    }
+
+    .nrc-schedule__day-header .dot--g {
+      background: var(--accent);
+    }
+
+    .nrc-schedule__day-header .title {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      color: var(--fg-muted);
+      margin-left: 8px;
+    }
+
+    .nrc-schedule__event {
+      display: flex;
+      gap: 20px;
+      padding: 20px 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .nrc-schedule__event:last-child {
+      border-bottom: none;
+    }
+
+    .nrc-schedule__event:hover {
+      background: rgba(0, 255, 136, 0.02);
+      padding-left: 35px;
+    }
+
+    .nrc-schedule__time {
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      color: var(--accent3);
+      min-width: 130px;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .nrc-schedule__time::before {
+      content: '> ';
+      color: var(--accent);
+      opacity: 0.5;
+    }
+
+    .nrc-schedule__event:hover .nrc-schedule__time {
+      color: var(--accent);
+    }
+
+    .nrc-schedule__event-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .nrc-schedule__event-desc {
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+      line-height: 1.5;
+    }
+
+    /* ==============================
+       GALLERY
+       ============================== */
+    .nrc-gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+
+    .nrc-gallery__item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .nrc-gallery__item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+      z-index: 2;
+    }
+
+    .nrc-gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .nrc-gallery__item:hover img {
+      transform: scale(1.1);
+    }
+
+    .nrc-gallery__item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 40%, rgba(0, 255, 136, 0.2) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nrc-gallery__item:hover::after {
+      opacity: 1;
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .nrc-footer {
+      border-top: 1px solid var(--border);
+      padding: 50px 20px 25px;
+      position: relative;
+    }
+
+    .nrc-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      box-shadow: var(--glow);
+    }
+
+    .nrc-footer__content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .nrc-footer__logo img {
+      height: 40px;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+      filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.2));
+    }
+
+    .nrc-footer__logo:hover img {
+      opacity: 1;
+    }
+
+    .nrc-footer__text {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      color: var(--fg-muted);
+    }
+
+    .nrc-footer__text a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nrc-footer__social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nrc-footer__social a {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      color: var(--fg-muted);
+      text-decoration: none;
+      clip-path: var(--chamfer-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nrc-footer__social a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    /* ==============================
+       RESPONSIVE
+       ============================== */
+    /* MOBILE HAMBURGER */
+    .nrc-nav__hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      padding: 10px;
+      clip-path: var(--chamfer-sm);
+      transition: border-color 0.2s ease;
+    }
+
+    .nrc-nav__hamburger:hover {
+      border-color: var(--accent);
+    }
+
+    .nrc-nav__hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nrc-nav__hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nrc-nav__hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nrc-nav__hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nrc-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(8, 10, 13, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nrc-mobile-menu.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .nrc-mobile-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: color 0.2s ease;
+      padding: 10px 20px;
+    }
+
+    .nrc-mobile-menu a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 992px) {
+      .nrc-nav__links {
+        display: none;
+      }
+
+      .nrc-nav__hamburger {
+        display: flex;
+      }
+
+      .nrc-nav__cta {
+        display: none;
+      }
+
+      .nrc-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nrc-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nrc-about {
+        grid-template-columns: 1fr;
+      }
+
+      .nrc-robot-main {
+        width: 200px;
+        height: 250px;
+        right: 1%;
+        bottom: 3%;
+      }
+
+      .nrc-legacy-robot {
+        display: none;
+      }
+
+      .nrc-robot-3d__container {
+        grid-template-columns: 1fr;
+      }
+
+      .nrc-robot-3d__viewer {
+        min-height: 350px;
+      }
+
+      .nrc-robot-3d__info {
+        text-align: center;
+      }
+
+      body::before,
+      body::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nrc-nav {
+        padding: 12px 20px;
+      }
+
+      .nrc-nav.scrolled {
+        padding: 8px 20px;
+      }
+
+      .nrc-hero__title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+      }
+
+      .nrc-hero__theme {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nrc-nav {
+        padding: 10px 15px;
+      }
+
+      .nrc-hero {
+        padding: 100px 15px 60px;
+      }
+
+      .nrc-mega-countdown__grid {
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nrc-mega-countdown__item {
+        width: 68px;
+        padding: 14px 5px 12px;
+      }
+
+      .nrc-mega-countdown__num {
+        font-size: 1.5rem;
+      }
+
+      .nrc-mega-countdown__sep {
+        font-size: 1.2rem;
+      }
+
+      .nrc-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .nrc-hero__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .cyber-btn {
         width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
-      
-      .gallery:hover:before {
-        opacity: 1;
-      }
-      
-      .gallery .icon {
-        transform: scale(0.8);
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
-      
-      .gallery:hover .icon {
-        transform: scale(1);
-        opacity: 1;
+        max-width: 300px;
+        justify-content: center;
+        padding: 16px 24px;
+        min-height: 48px;
       }
 
-	  .custom-icon {
-  width: 60px; /* Adjust based on your PNG size */
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-}
+      .nrc-footer__content {
+        flex-direction: column;
+        text-align: center;
+      }
 
-/* Optional hover effect */
-.custom-icon:hover {
-  transform: scale(1.1);
-}
-    </style>
-  </head>
-  <body>
+      .nrc-schedule__event {
+        flex-direction: column;
+        gap: 6px;
+      }
 
-    
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.png');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-xl-10 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">   Édition 2025  <br><span>National Robotics <br> Competition </span></h1>
-            <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">11-13 Avril 2025 <br>UNIVERSITÉ MOHAMMED VI POLYTECHNIQUE
-			</p>
-            <div id="timer" class="d-flex mb-3">
-						  <div class="time" id="days"></div>
-						  <div class="time pl-4" id="hours"></div>
-						  <div class="time pl-4" id="minutes"></div>
-						  <div class="time pl-4" id="seconds"></div>
-						</div>
+      .nrc-schedule__time {
+        min-width: auto;
+      }
 
-            <!-- Buttons with animations -->
-            <div class="d-flex mt-3 mb-5">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyPWDljI_vaVTsx-mOdt1wveu5Kr0Z1Znmq9pwBy8ByvebtA/viewform" class="btn btn-primary py-3 px-4 mr-3 ftco-animate" data-animate-effect="fadeInLeft">
-                S'inscrire
-              </a>
-              <a href="CDC NRC 2025.pdf" class="btn btn-outline-primary py-3 px-4 ftco-animate" data-animate-effect="fadeInRight">
-                Consulter le cahier des charges
-              </a>
-            </div>
+      .nrc-about__objectives {
+        grid-template-columns: 1fr;
+      }
+
+      .nrc-section {
+        padding: 50px 15px;
+      }
+
+      .nrc-robot-main {
+        display: none;
+      }
+
+      .nrc-robot-3d__viewer {
+        min-height: 280px;
+        aspect-ratio: auto;
+      }
+
+      .nrc-robot-3d__specs {
+        grid-template-columns: 1fr;
+      }
+
+      .nrc-robot-3d__title {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+      }
+
+      .nrc-schedule__tabs {
+        gap: 6px;
+      }
+
+      .nrc-schedule__tab {
+        padding: 10px 18px;
+        font-size: 0.7rem;
+      }
+
+      .nrc-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .nrc-mega-countdown__item {
+        width: 60px;
+        padding: 10px 2px;
+      }
+
+      .nrc-mega-countdown__num {
+        font-size: 1.3rem;
+      }
+
+      .nrc-hero__badge {
+        font-size: 0.6rem;
+        padding: 6px 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      body::after,
+      body::before {
+        display: none;
+      }
+    }
+  </style>
+
+  <script defer src="js/fontawesome/all.min.js"></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nrc-nav" id="nrc-nav">
+    <a href="index.html" class="nrc-nav__logo">
+      <img src="E-TECH logo.png" alt="E-Technology">
+    </a>
+    <ul class="nrc-nav__links">
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#robot-3d">Robot</a></li>
+      <li><a href="#stats">Chiffres</a></li>
+      <li><a href="#schedule">Programme</a></li>
+      <li><a href="#gallery">Galerie</a></li>
+    </ul>
+    <a href="https://forms.gle/fbQ7sjijqmTimWBn9" target="_blank" class="nrc-nav__cta">S'inscrire</a>
+    <button class="nrc-nav__hamburger" id="nrc-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nrc-mobile-menu" id="nrc-mobile-menu">
+    <a href="#hero" class="nrc-mobile-link">Accueil</a>
+    <a href="#robot-3d" class="nrc-mobile-link">Robot</a>
+    <a href="#stats" class="nrc-mobile-link">Chiffres</a>
+    <a href="#schedule" class="nrc-mobile-link">Programme</a>
+    <a href="#gallery" class="nrc-mobile-link">Galerie</a>
+    <a href="https://forms.gle/fbQ7sjijqmTimWBn9" target="_blank" class="nrc-nav__cta nrc-mobile-link"
+      style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;">S'inscrire</a>
+    <a href="index.html" class="nrc-mobile-link" style="color:var(--fg-muted);font-size:0.9rem;">← Retour au club</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="nrc-hero" id="hero">
+    <div class="nrc-hero__grid"></div>
+    <div class="nrc-hero__blueprint"></div>
+    <div class="nrc-hero__glow nrc-hero__glow--1"></div>
+    <div class="nrc-hero__glow nrc-hero__glow--2"></div>
+    <div class="nrc-hero__glow nrc-hero__glow--3"></div>
+    <div class="nrc-hero__scanline"></div>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- FLOATING LEGACY ROBOTS -->
+    <div class="nrc-legacy-robots">
+      <!-- Spider Robot -->
+      <svg class="nrc-legacy-robot nrc-legacy-robot--spider" viewBox="0 0 100 80" fill="none">
+        <ellipse cx="50" cy="40" rx="20" ry="15" stroke="var(--accent)" stroke-width="1.5" fill="none" />
+        <circle cx="50" cy="35" r="3" fill="var(--accent)" />
+        <g stroke="var(--accent)" stroke-width="1" style="animation: spiderLeg 1s ease-in-out infinite">
+          <line x1="30" y1="35" x2="10" y2="20" />
+          <line x1="30" y1="40" x2="5" y2="40" />
+          <line x1="30" y1="45" x2="10" y2="60" />
+        </g>
+        <g stroke="var(--accent)" stroke-width="1" style="animation: spiderLeg 1s ease-in-out infinite reverse">
+          <line x1="70" y1="35" x2="90" y2="20" />
+          <line x1="70" y1="40" x2="95" y2="40" />
+          <line x1="70" y1="45" x2="90" y2="60" />
+        </g>
+      </svg>
+
+      <!-- Drone -->
+      <svg class="nrc-legacy-robot nrc-legacy-robot--drone" viewBox="0 0 100 60" fill="none">
+        <rect x="35" y="25" width="30" height="15" rx="3" stroke="var(--accent3)" stroke-width="1.5" fill="none" />
+        <line x1="35" y1="32" x2="15" y2="20" stroke="var(--accent3)" stroke-width="1" />
+        <line x1="65" y1="32" x2="85" y2="20" stroke="var(--accent3)" stroke-width="1" />
+        <line x1="35" y1="32" x2="15" y2="45" stroke="var(--accent3)" stroke-width="1" />
+        <line x1="65" y1="32" x2="85" y2="45" stroke="var(--accent3)" stroke-width="1" />
+        <circle cx="15" cy="20" r="8" stroke="var(--accent3)" stroke-width="1" fill="none"
+          style="animation: rotate360 0.5s linear infinite" />
+        <circle cx="85" cy="20" r="8" stroke="var(--accent3)" stroke-width="1" fill="none"
+          style="animation: rotate360 0.5s linear infinite reverse" />
+        <circle cx="15" cy="45" r="8" stroke="var(--accent3)" stroke-width="1" fill="none"
+          style="animation: rotate360 0.5s linear infinite" />
+        <circle cx="85" cy="45" r="8" stroke="var(--accent3)" stroke-width="1" fill="none"
+          style="animation: rotate360 0.5s linear infinite reverse" />
+      </svg>
+
+      <!-- Robot Arm -->
+      <svg class="nrc-legacy-robot nrc-legacy-robot--arm" viewBox="0 0 80 100" fill="none">
+        <rect x="30" y="80" width="20" height="15" stroke="var(--accent2)" stroke-width="1.5" fill="none" />
+        <rect x="35" y="50" width="10" height="30" stroke="var(--accent2)" stroke-width="1.5" fill="none" />
+        <circle cx="40" cy="50" r="6" stroke="var(--accent2)" stroke-width="1.5" fill="none" />
+        <rect x="38" y="20" width="4" height="30" stroke="var(--accent2)" stroke-width="1.5" fill="none" />
+        <circle cx="40" cy="20" r="5" stroke="var(--accent2)" stroke-width="1.5" fill="none" />
+        <line x1="35" y1="15" x2="25" y2="5" stroke="var(--accent2)" stroke-width="1" />
+        <line x1="45" y1="15" x2="55" y2="5" stroke="var(--accent2)" stroke-width="1" />
+      </svg>
+
+      <!-- Gears -->
+      <svg class="nrc-legacy-robot nrc-legacy-robot--gear" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="20" stroke="var(--accent)" stroke-width="1" fill="none" />
+        <circle cx="30" cy="30" r="8" stroke="var(--accent)" stroke-width="1" fill="none" />
+        <line x1="30" y1="5" x2="30" y2="15" stroke="var(--accent)" stroke-width="2" />
+        <line x1="30" y1="45" x2="30" y2="55" stroke="var(--accent)" stroke-width="2" />
+        <line x1="5" y1="30" x2="15" y2="30" stroke="var(--accent)" stroke-width="2" />
+        <line x1="45" y1="30" x2="55" y2="30" stroke="var(--accent)" stroke-width="2" />
+        <line x1="12" y1="12" x2="19" y2="19" stroke="var(--accent)" stroke-width="2" />
+        <line x1="41" y1="41" x2="48" y2="48" stroke="var(--accent)" stroke-width="2" />
+        <line x1="12" y1="48" x2="19" y2="41" stroke="var(--accent)" stroke-width="2" />
+        <line x1="41" y1="19" x2="48" y2="12" stroke="var(--accent)" stroke-width="2" />
+      </svg>
+
+      <svg class="nrc-legacy-robot nrc-legacy-robot--gear2" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="18" stroke="var(--accent3)" stroke-width="1" fill="none" />
+        <circle cx="30" cy="30" r="6" stroke="var(--accent3)" stroke-width="1" fill="none" />
+        <line x1="30" y1="8" x2="30" y2="16" stroke="var(--accent3)" stroke-width="2" />
+        <line x1="30" y1="44" x2="30" y2="52" stroke="var(--accent3)" stroke-width="2" />
+        <line x1="8" y1="30" x2="16" y2="30" stroke="var(--accent3)" stroke-width="2" />
+        <line x1="44" y1="30" x2="52" y2="30" stroke="var(--accent3)" stroke-width="2" />
+      </svg>
+    </div>
+
+    <!-- MAIN BIPEDAL ROBOT - INTERACTIVE -->
+    <div class="nrc-robot-main">
+      <canvas id="hero-robot-canvas"></canvas>
+    </div>
+
+    <div class="nrc-hero__content">
+      <div class="nrc-hero__badge">Edition 2025/2026 &mdash; 8eme Edition</div>
+      <p class="nrc-hero__edition">Emines Technology Club presente</p>
+      <h1 class="nrc-hero__title">
+        <span class="glitch-text" data-text="National">National</span><br>
+        <span class="glitch-text" data-text="Robotics">Robotics</span><br>
+        <span class="accent-gradient">Competition</span>
+      </h1>
+      <p class="nrc-hero__theme">Theme : <em>Mobilite Industrielle</em> &mdash; Robot Bipede</p>
+      <p class="nrc-hero__info"><strong>17 - 19 Avril 2026</strong> &mdash; UM6P, Ben Guerir</p>
+
+      <div class="nrc-mega-countdown">
+        <div class="nrc-mega-countdown__label">Compte a rebours</div>
+        <div class="nrc-mega-countdown__grid" id="nrc-timer">
+          <div class="nrc-mega-countdown__item">
+            <div class="nrc-mega-countdown__num" id="cd-days">--</div>
+            <div class="nrc-mega-countdown__unit">Jours</div>
+          </div>
+          <div class="nrc-mega-countdown__sep">:</div>
+          <div class="nrc-mega-countdown__item">
+            <div class="nrc-mega-countdown__num" id="cd-hours">--</div>
+            <div class="nrc-mega-countdown__unit">Heures</div>
+          </div>
+          <div class="nrc-mega-countdown__sep">:</div>
+          <div class="nrc-mega-countdown__item">
+            <div class="nrc-mega-countdown__num" id="cd-mins">--</div>
+            <div class="nrc-mega-countdown__unit">Minutes</div>
+          </div>
+          <div class="nrc-mega-countdown__sep">:</div>
+          <div class="nrc-mega-countdown__item">
+            <div class="nrc-mega-countdown__num" id="cd-secs">--</div>
+            <div class="nrc-mega-countdown__unit">Secondes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nrc-hero__actions">
+        <a href="https://forms.gle/fbQ7sjijqmTimWBn9" target="_blank" class="cyber-btn cyber-btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <line x1="19" y1="8" x2="19" y2="14" />
+            <line x1="22" y1="11" x2="16" y2="11" />
+          </svg>
+          S'inscrire
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE 3D ROBOT SECTION -->
+  <section class="nrc-robot-3d-section" id="robot-3d">
+    <div class="nrc-robot-3d__container">
+      <div class="nrc-robot-3d__info anim-fade-up">
+        <span class="nrc-robot-3d__tag">Edition 2026</span>
+        <h2 class="nrc-robot-3d__title">Robot <span>Bipede</span></h2>
+        <p class="nrc-robot-3d__desc">
+          Decouvrez le defi de cette annee : concevoir un <span class="hl">robot bipede autonome</span>
+          capable de naviguer dans un environnement industriel. Explorez le modele 3D interactif
+          et imaginez votre propre creation.
+        </p>
+        <div class="nrc-robot-3d__specs">
+          <div class="nrc-robot-3d__spec">
+            <span class="nrc-robot-3d__spec-label">Locomotion</span>
+            <span class="nrc-robot-3d__spec-value">Bipede</span>
+          </div>
+          <div class="nrc-robot-3d__spec">
+            <span class="nrc-robot-3d__spec-label">Theme</span>
+            <span class="nrc-robot-3d__spec-value">Mobilite Industrielle</span>
+          </div>
+          <div class="nrc-robot-3d__spec">
+            <span class="nrc-robot-3d__spec-label">Autonomie</span>
+            <span class="nrc-robot-3d__spec-value">Navigation AI</span>
+          </div>
+          <div class="nrc-robot-3d__spec">
+            <span class="nrc-robot-3d__spec-label">Challenge</span>
+            <span class="nrc-robot-3d__spec-value">24h Hackathon</span>
+          </div>
+        </div>
+      </div>
+      <div class="nrc-robot-3d__viewer anim-fade-up">
+        <img class="nrc-robot-3d__image" src="Avant.JPG" alt="Robot Bipede NRC 2026">
+        <div class="nrc-robot-3d__overlay">
+          <div class="nrc-robot-3d__corner nrc-robot-3d__corner--tl"></div>
+          <div class="nrc-robot-3d__corner nrc-robot-3d__corner--tr"></div>
+          <div class="nrc-robot-3d__corner nrc-robot-3d__corner--bl"></div>
+          <div class="nrc-robot-3d__corner nrc-robot-3d__corner--br"></div>
+          <div class="nrc-robot-3d__scanline"></div>
+        </div>
+        <div class="nrc-robot-3d__label">Robot Bipede - NRC 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="nrc-about" id="about">
+    <div class="nrc-about__text anim-fade-up">
+      <div class="nrc-section-header" style="text-align:left;margin-bottom:15px;">
+        <span class="nrc-section-header__tag">A propos de la NRC</span>
+      </div>
+      <h2>La Competition <span>Nationale de Robotique</span></h2>
+      <p>La <span class="highlight">8eme edition</span> de la NRC met a l'honneur le <span class="highlight">robot
+          bipede</span>, symbole de mobilite et d'agilite dans l'industrie du futur.</p>
+      <p>Les participants mobilisent leurs competences en <span class="highlight">robotique, automatique, informatique
+          industrielle et systemes embarques</span>. Plus qu'une competition, la NRC est un tremplin pour les talents de
+        demain.</p>
+      <div class="terminal-cmd">nrc --edition 2026 --theme "mobilite-industrielle"</div>
+    </div>
+    <div class="nrc-about__objectives anim-fade-up">
+      <div class="nrc-about__obj">
+        <span class="nrc-about__obj-icon">// 01</span>
+        <p>Travail pluridisciplinaire et transversal</p>
+      </div>
+      <div class="nrc-about__obj">
+        <span class="nrc-about__obj-icon">// 02</span>
+        <p>Collaboration entre ingenieurs</p>
+      </div>
+      <div class="nrc-about__obj">
+        <span class="nrc-about__obj-icon">// 03</span>
+        <p>Problematique reelle, temps limite</p>
+      </div>
+      <div class="nrc-about__obj">
+        <span class="nrc-about__obj-icon">// 04</span>
+        <p>Synergie et esprit d'equipe</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="nrc-section" id="stats">
+    <div class="nrc-section-header anim-fade-up">
+      <span class="nrc-section-header__tag">Chiffres cles</span>
+      <h2 class="nrc-section-header__title">La NRC en Chiffres</h2>
+      <div class="nrc-section-header__line"></div>
+    </div>
+    <div class="nrc-stats">
+      <div class="nrc-stat anim-fade-up">
+        <span class="nrc-stat__icon">// Ecoles</span>
+        <div class="nrc-stat__num" data-count="30">0</div>
+        <div class="nrc-stat__label">Ecoles d'ingenieurs</div>
+      </div>
+      <div class="nrc-stat anim-fade-up">
+        <span class="nrc-stat__icon">// Participants</span>
+        <div class="nrc-stat__num" data-count="170">0</div>
+        <div class="nrc-stat__label">Eleves ingenieurs</div>
+      </div>
+      <div class="nrc-stat anim-fade-up">
+        <span class="nrc-stat__icon">// Duree</span>
+        <div class="nrc-stat__num" data-count="24">0</div>
+        <div class="nrc-stat__label">Heures de hackathon</div>
+      </div>
+      <div class="nrc-stat anim-fade-up">
+        <span class="nrc-stat__icon">// Recompenses</span>
+        <div class="nrc-stat__num" data-count="25000">0</div>
+        <div class="nrc-stat__label">DH de prix</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="nrc-schedule-section" id="schedule">
+    <div class="nrc-schedule">
+      <div class="nrc-section-header anim-fade-up">
+        <span class="nrc-section-header__tag">Programme</span>
+        <h2 class="nrc-section-header__title">Programme du Hackathon</h2>
+        <div class="nrc-section-header__line"></div>
+      </div>
+
+      <div class="nrc-schedule__tabs anim-fade-up">
+        <div class="nrc-schedule__tab active" data-day="1">Jour 01<span>Ven 17/04</span></div>
+        <div class="nrc-schedule__tab" data-day="2">Jour 02<span>Sam 18/04</span></div>
+        <div class="nrc-schedule__tab" data-day="3">Jour 03<span>Dim 19/04</span></div>
+      </div>
+
+      <div class="nrc-schedule__day active" id="day-1">
+        <div class="nrc-schedule__day-header">
+          <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+          <span class="title">nrc@2026:~/jour-01</span>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">15:00 - 19:00</div>
+          <div>
+            <div class="nrc-schedule__event-title">Accueil des participants</div>
+            <div class="nrc-schedule__event-desc">Enregistrement et distribution des badges</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">20:00 - 21:30</div>
+          <div>
+            <div class="nrc-schedule__event-title">Diner</div>
+            <div class="nrc-schedule__event-desc">Networking entre equipes</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">22:00 - 23:30</div>
+          <div>
+            <div class="nrc-schedule__event-title">Conference d'ouverture</div>
+            <div class="nrc-schedule__event-desc">Presentation du cahier des charges</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nrc-schedule__day" id="day-2">
+        <div class="nrc-schedule__day-header">
+          <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+          <span class="title">nrc@2026:~/jour-02</span>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">08:00 - 08:30</div>
+          <div>
+            <div class="nrc-schedule__event-title">Distribution du materiel</div>
+            <div class="nrc-schedule__event-desc">Reception des composants robotiques</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">08:30 - 13:00</div>
+          <div>
+            <div class="nrc-schedule__event-title">Debut du hackathon</div>
+            <div class="nrc-schedule__event-desc">Conception et construction des robots</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">13:00 - 14:00</div>
+          <div>
+            <div class="nrc-schedule__event-title">Dejeuner</div>
+            <div class="nrc-schedule__event-desc">Pause repas</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">14:00 - 20:00</div>
+          <div>
+            <div class="nrc-schedule__event-title">Reprise du hackathon</div>
+            <div class="nrc-schedule__event-desc">Developpement et tests</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">20:00 - 21:30</div>
+          <div>
+            <div class="nrc-schedule__event-title">Diner</div>
+            <div class="nrc-schedule__event-desc">Feedback des mentors</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nrc-schedule__day" id="day-3">
+        <div class="nrc-schedule__day-header">
+          <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+          <span class="title">nrc@2026:~/jour-03</span>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">08:30</div>
+          <div>
+            <div class="nrc-schedule__event-title">Fin & remise des robots</div>
+            <div class="nrc-schedule__event-desc">Finalisation des projets</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">12:00 - 16:00</div>
+          <div>
+            <div class="nrc-schedule__event-title">Phase d'evaluation</div>
+            <div class="nrc-schedule__event-desc">Tests des robots selon le cahier des charges</div>
+          </div>
+        </div>
+        <div class="nrc-schedule__event">
+          <div class="nrc-schedule__time">16:00 - 17:00</div>
+          <div>
+            <div class="nrc-schedule__event-title">Remise des prix</div>
+            <div class="nrc-schedule__event-desc">Ceremonie de cloture</div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <section class="ftco-counter img" id="section-counter" data-aos="fade-up">
-    	<div class="container">
-    		<div class="row d-flex">
-    			<div class="col-md-6 d-flex">
-    				<div class="img d-flex align-self-stretch" style="background-image:url(images/slide-01.jpg);"></div>
-    			</div>
-    			<div class="col-md-6 pl-md-5 py-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<span class="subheading">Chiffres clés</span>
-		            <h2 class="mb-4"><span>Chiffres</span> de la Compétition</h2>
-		            <p>La Compétition Nationale de Robotique rassemble les esprits d'ingénierie les plus brillants de tout le pays</p>
-		          </div>
-		        </div>
-		    		<div class="row">
-		          <div class="col-md-6 justify-content-center counter-wrap ftco-animate" data-aos="fade-right" data-aos-delay="100">
-		            <div class="block-18 text-center py-4 bg-light mb-4">
-		              <div class="text">
-						<div class="icon d-flex justify-content-center align-items-center">
-							<img src="images/icons/university.png" alt="Schools icon" class="custom-icon">
-						  </div>
-		                <strong class="number" data-number="30">30</strong>
-		                <span>Écoles Participantes</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 justify-content-center counter-wrap ftco-animate" data-aos="fade-left" data-aos-delay="200">
-		            <div class="block-18 text-center py-4 bg-light mb-4">
-		              <div class="text">
-						<div class="icon d-flex justify-content-center align-items-center">
-							<img src="images/icons/1.png" alt="Schools icon" class="custom-icon">
-						  </div>
-		                <strong class="number" data-number="120">120</strong>
-		                <span>Étudiants en Ingénierie</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 justify-content-center counter-wrap ftco-animate" data-aos="fade-right" data-aos-delay="300">
-		            <div class="block-18 text-center py-4 bg-light mb-4">
-		              <div class="text">
-						<div class="icon d-flex justify-content-center align-items-center">
-							<img src="images/icons/2.png" alt="Schools icon" class="custom-icon">
-						  </div>
-		                <strong class="number" data-number="24">0</strong>
-		                <span>Heures</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-6 justify-content-center counter-wrap ftco-animate" data-aos="fade-left" data-aos-delay="400">
-		            <div class="block-18 text-center py-4 bg-light mb-4">
-		              <div class="text">
-						<div class="icon d-flex justify-content-center align-items-center">
-							<img src="images/icons/3.png" alt="Schools icon" class="custom-icon">
-						  </div>
-		                <strong class="number" data-number="20000">0</strong>
-		                <span>Prix Total (DH)</span>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-	        </div>
-        </div>
-    	</div>
-    </section>
+  <!-- GALLERY -->
+  <section class="nrc-section" id="gallery">
+    <div class="nrc-section-header anim-fade-up">
+      <span class="nrc-section-header__tag">Galerie</span>
+      <h2 class="nrc-section-header__title">Moments de la Competition</h2>
+      <div class="nrc-section-header__line"></div>
+    </div>
+    <div class="nrc-gallery__grid anim-fade-up">
+      <a href="images/img_3.jpg" class="nrc-gallery__item" target="_blank"><img src="images/img_3.jpg" alt="NRC"></a>
+      <a href="images/about.jpg" class="nrc-gallery__item" target="_blank"><img src="images/about.jpg" alt="NRC"></a>
+      <a href="images/E-Tech-URC-31.jpg" class="nrc-gallery__item" target="_blank"><img src="images/E-Tech-URC-31.jpg"
+          alt="NRC"></a>
+      <a href="images/slides/slide-03.jpg" class="nrc-gallery__item" target="_blank"><img
+          src="images/slides/slide-03.jpg" alt="NRC"></a>
+    </div>
+  </section>
 
-		
+  <!-- FOOTER -->
+  <footer class="nrc-footer">
+    <div class="nrc-footer__content">
+      <a href="index.html" class="nrc-footer__logo"><img src="E-TECH logo.png" alt="E-Technology"></a>
+      <div class="nrc-footer__text">&copy; 2026 <a href="index.html">E-Technology Club</a> &mdash; EMINES, UM6P</div>
+      <div class="nrc-footer__social">
+        <a href="https://www.instagram.com/eminestechnology/" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/emines-technology-club/" aria-label="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
 
-		<section class="ftco-section bg-light" data-aos="fade-up">
-			<div class="container">
-				<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Programme</span>
-            <h2 class="mb-4"><span>Programme</span> du Hackathon</h2>
-          </div>
-        </div>
-        <div class="ftco-search">
-					<div class="row">
-            <div class="col-md-12 nav-link-wrap">
-	            <div class="nav nav-pills d-flex text-center justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-	              <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Jour 01 <span>Vendredi 11/04/2025</span></a>
-
-	              <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Jour 02 <span>Samedi 12/04/2025</span></a>
-
-	              <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Jour 03 <span>Dimanche 13/04/2025</span></a>
-
-	            </div>
-	          </div>
-	          <div class="col-md-12 tab-wrap">
-	            
-	            <div class="tab-content" id="v-pills-tabContent">
-
-	              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="100">
-	              		<div class="text pl-md-5">
-	              			<span class="time">15:00 - 19:00</span>
-	              			<h2><a href="#">Accueil des participants</a></h2>
-	              			<p>Enregistrement des équipes et distribution des badges d'accès au site de la compétition.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="200">
-	              		<div class="text pl-md-5">
-	              			<span class="time">20:00 - 21:30</span>
-	              			<h2><a href="#">Dîner</a></h2>
-	              			<p>Repas et opportunité de networking entre les équipes participantes.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="300">
-	              		<div class="text pl-md-5">
-	              			<span class="time">22:00 - 23:30</span>
-	              			<h2><a href="#">Conférence d'ouverture & présentation du cahier des charges</a></h2>
-	              			<p>Présentation des règles de la compétition et du défi robotique à relever pendant le hackathon.</p>
-	              		</div>
-	              	</div>
-	              </div>
-
-	              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="100">
-	              		<div class="text pl-md-5">
-	              			<span class="time">08:00 - 08:30</span>
-	              			<h2><a href="#">Distribution du matériel</a></h2>
-	              			<p>Les équipes reçoivent le matériel nécessaire pour construire leur robot.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="200">
-	              		<div class="text pl-md-5">
-	              			<span class="time">08:30 - 13:00</span>
-	              			<h2><a href="#">Début du hackathon</a></h2>
-	              			<p>Les équipes commencent à travailler sur la conception et la construction de leurs robots.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="300">
-	              		<div class="text pl-md-5">
-	              			<span class="time">13:00 - 14:00</span>
-	              			<h2><a href="#">Déjeuner</a></h2>
-	              			<p>Pause repas pour tous les participants.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="400">
-	              		<div class="text pl-md-5">
-	              			<span class="time">14:00 - 20:00</span>
-	              			<h2><a href="#">Reprise</a></h2>
-	              			<p>Continuation du développement des robots et des stratégies de compétition.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="500">
-	              		<div class="text pl-md-5">
-	              			<span class="time">20:00 - 21:30</span>
-	              			<h2><a href="#">Dîner</a></h2>
-	              			<p>Repas du soir avec session de feedback et conseils des mentors.</p>
-	              		</div>
-	              	</div>
-	              </div>
-	              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="100">
-	              		<div class="text pl-md-5">
-	              			<span class="time">08:30</span>
-	              			<h2><a href="#">Fin de la compétition et remise des robots</a></h2>
-	              			<p>Les équipes finalisent leurs projets et remettent leurs robots pour l'évaluation.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="200">
-	              		<div class="text pl-md-5">
-	              			<span class="time">12:00 - 16:00</span>
-	              			<h2><a href="#">Phase d'évaluation</a></h2>
-	              			<p>Les robots relèveront les défis définis dans le cahier des charges.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="300">
-	              		<div class="text pl-md-5">
-	              			<span class="time">16:00 - 17:00</span>
-	              			<h2><a href="#">Remise des prix</a></h2>
-	              			<p>Cérémonie finale avec annonce des gagnants et remise des prix.</p>
-	              		</div>
-	              	</div>
-	              	<div class="speaker-wrap ftco-animate d-flex" data-aos="fade-up" data-aos-delay="400">
-	              		<div class="text pl-md-5">
-	              			<span class="time">17:00</span>
-	              			<h2><a href="#">Départ des participants</a></h2>
-	              			<p>Fin officielle de l'événement et départ des participants.</p>
-	              		</div>
-	              	</div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-        </div>
-			</div>
-		</section>
-		
-
-		
-
-    <section class="ftco-gallery" data-aos="fade-up">
-    	<div class="container-wrap">
-    		<div class="row no-gutters">
-					<div class="col-md-3 ftco-animate">
-						<a href="images/img_3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/img_3.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/about.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/about.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/E-Tech-URC-31.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/E-Tech-URC-31.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="images/slide-03.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/slide-03.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-						</a>
-					</div>
-        </div>
-    	</div>
-    </section>
-
-  
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="js3/jquery.min.js"></script>
-  <script src="js3/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js3/popper.min.js"></script>
-  <script src="js3/bootstrap.min.js"></script>
-  <script src="js3/jquery.easing.1.3.js"></script>
-  <script src="js3/jquery.waypoints.min.js"></script>
-  <script src="js3/jquery.stellar.min.js"></script>
-  <script src="js3/owl.carousel.min.js"></script>
-  <script src="js3/jquery.magnific-popup.min.js"></script>
-  <script src="js3/aos.js"></script>
-  <script src="js3/jquery.animateNumber.min.js"></script>
-  <script src="js3/bootstrap-datepicker.js"></script>
-  <script src="js3/jquery.timepicker.min.js"></script>
-  <script src="js3/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js3/google-map.js"></script>
-  <script src="js3/main.js"></script>
-  
-  <!-- Override countdown timer for April 11, 2025 -->
   <script>
-    $(document).ready(function() {
-      // Set the date we're counting down to - April 11, 2025
-      var countDownDate = new Date("April 12, 2025 00:00:00").getTime();
-      
-      // Update the countdown every 1 second
-      var x = setInterval(function() {
-        // Get today's date and time
-        var now = new Date().getTime();
-        
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-        
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        // Display the result in French
-        document.getElementById("days").innerHTML = days + "<span>Jours</span>";
-        document.getElementById("hours").innerHTML = hours + "<span>Heures</span>";
-        document.getElementById("minutes").innerHTML = minutes + "<span>Minutes</span>";
-        document.getElementById("seconds").innerHTML = seconds + "<span>Secondes</span>";
-        
-        // If the count down is finished, write some text
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("timer").innerHTML = "L'ÉVÉNEMENT A COMMENCÉ";
+    (function () {
+      'use strict';
+
+      // Countdown
+      var TARGET = new Date('2026-04-17T00:00:00').getTime();
+      function updateCD() {
+        var now = Date.now(), d = TARGET - now;
+        if (d < 0) {
+          document.getElementById('nrc-timer').innerHTML = '<div style="font-family:var(--font-heading);font-size:1.3rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;padding:25px;">Evenement en cours!</div>';
+          return;
         }
-      }, 1000);
-    });
-  </script>
-  
-  <!-- Add AOS initialization with subtle settings -->
-  <script>
-    $(document).ready(function() {
-      // Initialize AOS with subtle settings
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 50
+        var days = Math.floor(d / 86400000), hrs = Math.floor((d % 86400000) / 3600000), mins = Math.floor((d % 3600000) / 60000), secs = Math.floor((d % 60000) / 1000);
+        document.getElementById('cd-days').textContent = days < 10 ? '0' + days : days;
+        document.getElementById('cd-hours').textContent = hrs < 10 ? '0' + hrs : hrs;
+        document.getElementById('cd-mins').textContent = mins < 10 ? '0' + mins : mins;
+        var sEl = document.getElementById('cd-secs');
+        sEl.textContent = secs < 10 ? '0' + secs : secs;
+        sEl.style.transform = 'scale(1.03)';
+        setTimeout(function () { sEl.style.transform = 'scale(1)'; }, 100);
+      }
+      updateCD();
+      setInterval(updateCD, 1000);
+
+      // Navbar scroll (throttled)
+      var nav = document.getElementById('nrc-nav');
+      var scrollTicking = false;
+      window.addEventListener('scroll', function () {
+        if (!scrollTicking) {
+          requestAnimationFrame(function () {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+            scrollTicking = false;
+          });
+          scrollTicking = true;
+        }
+      }, { passive: true });
+
+      // Mobile hamburger menu
+      var hamburger = document.getElementById('nrc-hamburger');
+      var mobileMenu = document.getElementById('nrc-mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function () {
+          hamburger.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('.nrc-mobile-link').forEach(function (link) {
+          link.addEventListener('click', function () {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      // Schedule tabs
+      var tabs = document.querySelectorAll('.nrc-schedule__tab'), days = document.querySelectorAll('.nrc-schedule__day');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          days.forEach(function (d) { d.classList.remove('active'); });
+          this.classList.add('active');
+          document.getElementById('day-' + this.getAttribute('data-day')).classList.add('active');
+        });
       });
-      
-      // Enhanced scroll to animation
-      $('.navbar-nav .nav-item a, .js-scroll-trigger').on('click', function(e) {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: (target.offset().top - 70)
-            }, 1000, 'easeInOutExpo');
-            return false;
+
+      // Counters
+      var countersAnimated = false;
+      function animateCounters() {
+        if (countersAnimated) return;
+        var nums = document.querySelectorAll('.nrc-stat__num[data-count]');
+        if (!nums.length || nums[0].getBoundingClientRect().top > window.innerHeight) return;
+        countersAnimated = true;
+        nums.forEach(function (el) {
+          var target = parseInt(el.getAttribute('data-count')), duration = 2000, startTime = null;
+          function animate(ts) {
+            if (!startTime) startTime = ts;
+            var progress = Math.min((ts - startTime) / duration, 1), eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = target >= 1000 ? Math.floor(eased * target).toLocaleString() : Math.floor(eased * target);
+            if (progress < 1) requestAnimationFrame(animate);
+            else el.textContent = target >= 1000 ? target.toLocaleString() : target;
+          }
+          requestAnimationFrame(animate);
+        });
+      }
+      window.addEventListener('scroll', animateCounters);
+
+      // Scroll animations
+      var animEls = document.querySelectorAll('.anim-fade-up');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        animEls.forEach(function (el) { obs.observe(el); });
+      } else { animEls.forEach(function (el) { el.classList.add('visible'); }); }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var href = this.getAttribute('href');
+          if (href === '#') return;
+          var target = document.querySelector(href);
+          if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' }); }
+        });
+      });
+
+      // Particles
+      var canvas = document.getElementById('particles-canvas');
+      if (canvas) {
+        var ctx = canvas.getContext('2d'), particles = [], PCOUNT = 45;
+        function resize() { canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight; }
+        function createP() { return { x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2, size: Math.random() * 1.5 + 0.5, opacity: Math.random() * 0.3 + 0.1 }; }
+        function init() { particles = []; for (var i = 0; i < PCOUNT; i++) particles.push(createP()); }
+        function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(function (p, i) {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 255, 136, ' + p.opacity + ')'; ctx.fill();
+            for (var j = i + 1; j < particles.length; j++) {
+              var dx = p.x - particles[j].x, dy = p.y - particles[j].y, dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 100) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(particles[j].x, particles[j].y); ctx.strokeStyle = 'rgba(0, 255, 136, ' + (0.03 * (1 - dist / 100)) + ')'; ctx.lineWidth = 0.5; ctx.stroke(); }
+            }
+          });
+          requestAnimationFrame(draw);
+        }
+        resize(); init(); draw();
+        window.addEventListener('resize', function () { resize(); init(); });
+      }
+
+      // Interactive Robot Canvas in Hero
+      var robotCanvas = document.getElementById('hero-robot-canvas');
+      if (robotCanvas) {
+        var rctx = robotCanvas.getContext('2d');
+        var mouseX = 0.5, mouseY = 0.5;
+        var targetX = 0.5, targetY = 0.5;
+        var time = 0;
+        var glitchIntensity = 0;
+
+        function resizeRobot() {
+          var rect = robotCanvas.parentElement.getBoundingClientRect();
+          robotCanvas.width = rect.width;
+          robotCanvas.height = rect.height;
+        }
+
+        // Track mouse globally for hero section
+        document.addEventListener('mousemove', function (e) {
+          var rect = robotCanvas.getBoundingClientRect();
+          var cx = rect.left + rect.width / 2;
+          var cy = rect.top + rect.height / 2;
+          targetX = 0.5 + (e.clientX - cx) / (window.innerWidth / 2) * 0.3;
+          targetY = 0.5 + (e.clientY - cy) / (window.innerHeight / 2) * 0.3;
+          targetX = Math.max(0.2, Math.min(0.8, targetX));
+          targetY = Math.max(0.2, Math.min(0.8, targetY));
+        });
+
+        robotCanvas.addEventListener('click', function () {
+          glitchIntensity = 1;
+        });
+
+        function drawRobot() {
+          time += 0.02;
+          mouseX += (targetX - mouseX) * 0.08;
+          mouseY += (targetY - mouseY) * 0.08;
+          glitchIntensity *= 0.92;
+
+          var w = robotCanvas.width, h = robotCanvas.height;
+          var cx = w / 2, cy = h / 2;
+          var scale = Math.min(w, h) / 400;
+          var lookX = (mouseX - 0.5) * 30;
+          var lookY = (mouseY - 0.5) * 20;
+
+          rctx.clearRect(0, 0, w, h);
+
+          // Glitch effect
+          if (glitchIntensity > 0.1) {
+            rctx.save();
+            rctx.globalCompositeOperation = 'lighter';
+            rctx.fillStyle = 'rgba(255, 107, 53, ' + (glitchIntensity * 0.1) + ')';
+            rctx.fillRect(Math.random() * w, Math.random() * h, Math.random() * 100, 3);
+            rctx.fillStyle = 'rgba(0, 212, 255, ' + (glitchIntensity * 0.1) + ')';
+            rctx.fillRect(Math.random() * w, Math.random() * h, Math.random() * 100, 3);
+            rctx.restore();
+          }
+
+          rctx.save();
+          rctx.translate(cx + lookX * 0.3, cy + 20);
+
+          // Shadow/glow
+          rctx.shadowColor = 'rgba(0, 255, 136, 0.4)';
+          rctx.shadowBlur = 30 + Math.sin(time * 2) * 10;
+
+          // Body hover animation
+          var hover = Math.sin(time * 1.5) * 3;
+
+          // LEGS
+          var legSwing = Math.sin(time * 3) * 8;
+          rctx.save();
+          rctx.translate(-25 * scale, 45 * scale + hover);
+          rctx.rotate((legSwing + lookX * 0.02) * Math.PI / 180);
+          drawLeg(rctx, scale, '#00ff88', time);
+          rctx.restore();
+
+          rctx.save();
+          rctx.translate(25 * scale, 45 * scale + hover);
+          rctx.rotate((-legSwing + lookX * 0.02) * Math.PI / 180);
+          drawLeg(rctx, scale, '#00ff88', time + Math.PI);
+          rctx.restore();
+
+          // TORSO
+          rctx.save();
+          rctx.translate(0, hover);
+          drawTorso(rctx, scale, time);
+          rctx.restore();
+
+          // ARMS
+          var armSwing = Math.sin(time * 3) * 12;
+          rctx.save();
+          rctx.translate(-55 * scale, -20 * scale + hover);
+          rctx.rotate((armSwing + lookX * 0.05) * Math.PI / 180);
+          drawArm(rctx, scale, '#00d4ff', 1);
+          rctx.restore();
+
+          rctx.save();
+          rctx.translate(55 * scale, -20 * scale + hover);
+          rctx.rotate((-armSwing + lookX * 0.05) * Math.PI / 180);
+          drawArm(rctx, scale, '#00d4ff', -1);
+          rctx.restore();
+
+          // HEAD
+          rctx.save();
+          rctx.translate(lookX * 0.5, -75 * scale + hover + lookY * 0.3);
+          drawHead(rctx, scale, lookX, lookY, time);
+          rctx.restore();
+
+          rctx.restore();
+
+          requestAnimationFrame(drawRobot);
+        }
+
+        function drawHead(ctx, s, lx, ly, t) {
+          // Head base
+          ctx.fillStyle = '#0f1318';
+          ctx.strokeStyle = '#00ff88';
+          ctx.lineWidth = 2;
+          roundRect(ctx, -35 * s, -35 * s, 70 * s, 50 * s, 8 * s, true, true);
+
+          // Visor
+          ctx.fillStyle = 'rgba(0, 255, 136, 0.15)';
+          ctx.strokeStyle = '#00ff88';
+          roundRect(ctx, -28 * s, -25 * s, 56 * s, 25 * s, 4 * s, true, true);
+
+          // Eyes - follow cursor
+          var eyeOffsetX = lx * 0.15;
+          var eyeOffsetY = ly * 0.1;
+
+          ctx.fillStyle = '#080a0d';
+          roundRect(ctx, -22 * s + eyeOffsetX, -20 * s + eyeOffsetY, 16 * s, 12 * s, 2 * s, true, false);
+          roundRect(ctx, 6 * s + eyeOffsetX, -20 * s + eyeOffsetY, 16 * s, 12 * s, 2 * s, true, false);
+
+          // Eye glow/pupils
+          var pulseGlow = 0.6 + Math.sin(t * 4) * 0.4;
+          ctx.fillStyle = 'rgba(0, 255, 136, ' + pulseGlow + ')';
+          ctx.beginPath();
+          ctx.arc(-14 * s + eyeOffsetX * 1.5, -14 * s + eyeOffsetY * 1.2, 4 * s, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(14 * s + eyeOffsetX * 1.5, -14 * s + eyeOffsetY * 1.2, 4 * s, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Antenna
+          ctx.strokeStyle = '#00ff88';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(0, -35 * s);
+          ctx.lineTo(0, -50 * s);
+          ctx.stroke();
+
+          // Antenna light
+          ctx.fillStyle = '#ff6b35';
+          ctx.shadowColor = '#ff6b35';
+          ctx.shadowBlur = 10 + Math.sin(t * 6) * 5;
+          ctx.beginPath();
+          ctx.arc(0, -52 * s, 4 * s, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+
+        function drawTorso(ctx, s, t) {
+          // Main body
+          ctx.fillStyle = '#0f1318';
+          ctx.strokeStyle = '#00ff88';
+          ctx.lineWidth = 2;
+          roundRect(ctx, -45 * s, -45 * s, 90 * s, 80 * s, 6 * s, true, true);
+
+          // Chest panel
+          ctx.fillStyle = '#161b22';
+          ctx.strokeStyle = '#00d4ff';
+          ctx.lineWidth = 1;
+          roundRect(ctx, -35 * s, -35 * s, 70 * s, 45 * s, 4 * s, true, true);
+
+          // Core
+          var coreGlow = 0.4 + Math.sin(t * 2) * 0.3;
+          ctx.fillStyle = 'rgba(0, 255, 136, ' + coreGlow + ')';
+          ctx.beginPath();
+          ctx.arc(0, -12 * s, 15 * s, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.fillStyle = '#00ff88';
+          ctx.beginPath();
+          ctx.arc(0, -12 * s, 8 * s, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Hip section
+          ctx.fillStyle = '#161b22';
+          ctx.strokeStyle = '#3d4450';
+          roundRect(ctx, -38 * s, 20 * s, 76 * s, 20 * s, 3 * s, true, true);
+
+          // Data lines
+          ctx.strokeStyle = 'rgba(0, 212, 255, 0.4)';
+          ctx.lineWidth = 1;
+          for (var i = 0; i < 3; i++) {
+            ctx.beginPath();
+            ctx.moveTo(-30 * s + i * 20 * s, 5 * s);
+            ctx.lineTo(-30 * s + i * 20 * s, 18 * s);
+            ctx.stroke();
           }
         }
-      });
-    });
+
+        function drawArm(ctx, s, color, dir) {
+          ctx.fillStyle = '#0f1318';
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 1.5;
+
+          // Upper arm
+          roundRect(ctx, -8 * s, 0, 16 * s, 45 * s, 4 * s, true, true);
+
+          // Joint
+          ctx.fillStyle = '#161b22';
+          ctx.beginPath();
+          ctx.arc(0, 45 * s, 6 * s, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+
+          // Forearm
+          ctx.fillStyle = '#0f1318';
+          roundRect(ctx, -6 * s, 48 * s, 12 * s, 35 * s, 3 * s, true, true);
+
+          // Hand
+          ctx.fillStyle = '#161b22';
+          roundRect(ctx, -8 * s, 83 * s, 16 * s, 12 * s, 2 * s, true, true);
+        }
+
+        function drawLeg(ctx, s, color, t) {
+          ctx.fillStyle = '#0f1318';
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 1.5;
+
+          // Upper leg
+          roundRect(ctx, -12 * s, 0, 24 * s, 55 * s, 4 * s, true, true);
+
+          // Knee joint
+          ctx.fillStyle = '#161b22';
+          ctx.beginPath();
+          ctx.arc(0, 55 * s, 8 * s, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = color;
+          ctx.stroke();
+
+          // Knee light
+          var kneeGlow = 0.3 + Math.sin(t * 4) * 0.2;
+          ctx.fillStyle = 'rgba(0, 212, 255, ' + kneeGlow + ')';
+          ctx.beginPath();
+          ctx.arc(0, 55 * s, 4 * s, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Lower leg
+          ctx.fillStyle = '#0f1318';
+          ctx.strokeStyle = color;
+          roundRect(ctx, -10 * s, 60 * s, 20 * s, 50 * s, 3 * s, true, true);
+
+          // Foot
+          ctx.fillStyle = '#161b22';
+          roundRect(ctx, -18 * s, 110 * s, 36 * s, 14 * s, 3 * s, true, true);
+        }
+
+        function roundRect(ctx, x, y, w, h, r, fill, stroke) {
+          ctx.beginPath();
+          ctx.moveTo(x + r, y);
+          ctx.lineTo(x + w - r, y);
+          ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+          ctx.lineTo(x + w, y + h - r);
+          ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+          ctx.lineTo(x + r, y + h);
+          ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+          ctx.lineTo(x, y + r);
+          ctx.quadraticCurveTo(x, y, x + r, y);
+          ctx.closePath();
+          if (fill) ctx.fill();
+          if (stroke) ctx.stroke();
+        }
+
+        resizeRobot();
+        drawRobot();
+        window.addEventListener('resize', resizeRobot);
+      }
+    })();
   </script>
-    
-  </body>
+</body>
+
 </html>
